@@ -1,16 +1,43 @@
 # Design Discussion
 ## Design 1 (rsilva32)
-![rsilva32 design image](../Design-Individual/rsilva32/design.png)
-- Beginning of discussion (TBD)
+![rsilva32 design image](../Des*gn-Individual/rsilva32/design.png)
+- Beginning of discussion (TBD  * )
 ## Design 2 (bhawley3)
 ![bhawley3 design image](../Design-Individual/bhawley3/design.png)
 - Beginning of discussion (TBD)
 ## Design 3 (rjohnson348)
 ![rjohnson348 design image](../Design-Individual/rjohnson348/design.png)
-- Beginning of discussion (TBD)
+- Simple, yet informative design. Classes are neatly organized and easy to follow. Captures the requirement of the applications elegantly and accurately.
+
+* Pros:
+  * Uses the standard UML symbology correctly.
+  * Smart design of the inheritance of the Records class/interface. Good design of the completed attribute in the Record class. It makes it very clear to the reader how/when it is being used by noting the completed: condition.
+  * It’s very informative to define the connections instead of simply adding methods to the a specific class. It might not be a UML standard to show relationships but it’s very helpful for readers to follow and understand the logics
+  * Clearly denotes n to n relationships between classes.
+  * The usage of the utility class is very smart. By defining utility classes, we can set certain constraints to some data types when it is being used frequently in the application.
+
+* Cons:
+  * UML doesn't differentiate between public/private members/methods.
+  * It’s not clear what class some methods belongs to. For example, the playTournament method. Consider adding a manager class for user-tournament association and user-puzzle association that contains the methods managing all interactions between tournament/puzzle and user. This class will also provide the functionality to interact with the database such as adding records, query and get max.
+  * Minor issues such as typos and missing parenthesis.
+
 ## Design 4 (hwang404)
 ![hwang404 design image](../Design-Individual/hwang404/design.png)
-- Beginning of discussion (TBD)
+- Captures the overall concept and logics required for this application. However, without enough explanation, it’s hard to follow how each requirement is met. Granted that all query is done on the database, necessary methods for a specific query application shall be specifically defined.
+
+* Pros:
+  * Classes are sensible and have member variables that are appropriate.
+  * Negating to have member variables of other class types means that you can keep the classes modular.
+  * Followed the professor’s course to create association classes which helps to understand.
+  * Classes are neatly designed so there is no duplicate data stored in different classes that will potentially generate inconsistency issues.
+* Cons:
+  * UML design missing some detail and methods. For example how do tournaments work without a connection to Puzzle? This can be done through the puzzle list that the tournament object is maintaining. However, it’ll be clearer if a method is defined.
+  * A lot of your design is dependent on the GUI managing the state of the system. UI should not be responsible for managing system level states because it’ll lead to low cohesion and high coupling.
+  * Missing class initiation methods.
+  * Make method variables public is risky.
+  * Get and set methods are not necessary. It’ll be helpful for developers but not necessarily the main methods the Users will need to interact with the database.
+Missing relationships between classes.
+
 ## Team Design
 Team Design to come (TBD)
 ## Summary
