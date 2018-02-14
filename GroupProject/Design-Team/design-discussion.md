@@ -1,6 +1,23 @@
 # Design Discussion
 ## Design 1 (rsilva32)
 ![rsilva32 design image](../Des*gn-Individual/rsilva32/design.png)
+- This design has captured the overall design aspects and logic, simple and easy to follow. However, it’s missing some features such as it doesn’t indicate how the puzzles and tournaments in progress are handled. This design heavily depends on HashMaps and Lists local to Player to keep track of the Puzzle/Tournament records.
+
+* Pros:
+   * Having a separate Class to handle Statistics is an elegant way to manage statistics and data
+   * Informative diagram  which covers all the relevant operations and attributes
+   * It’s a great idea to use a separate Prize class which encapsulates prize manipulation related operations. 
+   * Having an interface in Prize class for generating a random prize value and determining if the Player can buy a vowel if the current price is greater than $300 are nice operations to have.
+   * Has managed to indicate all the relevant cardinalities and major relationships between classes
+   * It is elegant to have a separate interface to select the Player of the User(PlayGame class) and to handle Login/create player operations
+
+* Cons: 
+   * Missing some return types and public/private declarations
+   * Heavily depends on the Player class which contains most of the data structures of the entire system. Having such one massive class to manage something is hard to maintain/work with.
+   * Puzzle/Tournament creation operations are in the Player class which should be Puzzle/Tournament classes
+   * The utility class is nearly empty as it contains only the playetList<Player>. The design can be further improved by moving Tournament/Puzzle lists into utility class from the Player class
+   * Lists are managed through Lists/HashMaps in Utilities and Player classes rather than ListManager classes
+   * Doesn’t have the operation to generate GUID/UUID of Puzzles
 
 ## Design 2 (bhawley3)
 ![bhawley3 design image](../Design-Individual/bhawley3/design.png)
