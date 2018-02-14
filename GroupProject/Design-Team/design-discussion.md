@@ -1,10 +1,26 @@
 # Design Discussion
 ## Design 1 (rsilva32)
 ![rsilva32 design image](../Des*gn-Individual/rsilva32/design.png)
-- Beginning of discussion (TBD  * )
+
 ## Design 2 (bhawley3)
 ![bhawley3 design image](../Design-Individual/bhawley3/design.png)
-- Beginning of discussion (TBD)
+- This design captures almost all the requirements of the design while being informative and accurate. However, this design is complex and it is slightly difficult to understand the need for the “InProgress” classes which could have been handled directly in the Puzzle/Tournament record classes.
+
+* Pros:
+  * Collection/ListManager classes allow for easy management of the various Player, Tournament and Puzzle classes
+  * Clearly denotes with proper naming all the attributes, types, operations and relationships where relationships are denoted with accurate and effective descriptions
+  * The operations and state variables are distributed properly and don’t depend on a single class heavily which in turn helps to manage and maintain the design effectively
+  * Has indicated all the relevant cardinalities, public/private declarations, and the standard UML symbology is used correctly
+  * It’s elegant to have separate classes to denote Puzzle/Tournament statistics(PuzzleStats and TournamentStats) and Puzzle/Tournament records to maintain history and key features effectively
+    *Special notes are added to further describe design decisions
+
+* Cons:
+   * ListManagers may be redundant as they appear along the lines of a DB implementation. So may not necessary for the model
+   * Singleton pattern is used in ways that are unnecessary for the requirements
+   * The design is complex and can be further simplified
+   * Diamond mark in lines indicating aggregation/composition relationships is on the wrong end
+   * Both the PuzzleListManager and PuzzleRecord have copies of the same Puzzle while Both the TournamentListManager and TournamentRecord have copies of the same Tournament. This may lead to inconsistency as one or both copies may become out of synchronization
+   
 ## Design 3 (rjohnson348)
 ![rjohnson348 design image](../Design-Individual/rjohnson348/design.png)
 - Simple, yet informative design. Classes are neatly organized and easy to follow. Captures the requirement of the applications elegantly and accurately.
