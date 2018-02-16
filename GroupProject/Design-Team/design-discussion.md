@@ -1,6 +1,6 @@
 # Design Discussion
 ## Design 1 (rsilva32)
-![rsilva32 design image](../Des*gn-Individual/rsilva32/design.png)
+![rsilva32 design image](../Design-Individual/rsilva32/design.png)
 - This design has captured the overall design aspects and logic, simple and easy to follow. However, it’s missing some features such as it doesn’t indicate how the puzzles and tournaments in progress are handled. This design heavily depends on HashMaps and Lists local to Player to keep track of the Puzzle/Tournament records.
 
 * Pros:
