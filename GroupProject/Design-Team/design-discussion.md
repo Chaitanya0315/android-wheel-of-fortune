@@ -84,3 +84,6 @@ The team decided to go with a design that was a mixture/compilation of Design 2 
 * ‘getTournamentViablePuzzlesForUser()’ language does not match the get tournaments for user. Should make these use the same nomenclature
 * Add note to UML for buyVowel to indicate that prize value will decrement by 300
 * Perhaps same thing for ‘‘getTournamentViablePuzzlesForUser’ - what does this mean? (puzzles can’t have been completed or created by the user).
+
+## Summary
+During this project we learned to discuss and productively critique our peers work. While assessing the pros and cons of each design we quickly decided what our final design should look like. Upon our group reaching this conclusion we easily divided up the work so that each team member could contribute to the deliverable. Working in such a manner shows that we can be given a task or problem and identify appropriate sub-tasks that can me easily handled by individual team members. This was done in an efficient manner such that no tasks were left uncompleted and the final requested deliverable can be turned in on time. 
