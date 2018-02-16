@@ -6,12 +6,12 @@
 * Pros:
    * Having a separate Class to handle Statistics is an elegant way to manage statistics and data
    * Informative diagram  which covers all the relevant operations and attributes
-   * It’s a great idea to use a separate Prize class which encapsulates prize manipulation related operations. 
+   * It’s a great idea to use a separate Prize class which encapsulates prize manipulation related operations.
    * Having an interface in Prize class for generating a random prize value and determining if the Player can buy a vowel if the current price is greater than $300 are nice operations to have.
    * Has managed to indicate all the relevant cardinalities and major relationships between classes
    * It is elegant to have a separate interface to select the Player of the User(PlayGame class) and to handle Login/create player operations
 
-* Cons: 
+* Cons:
    * Missing some return types and public/private declarations
    * Heavily depends on the Player class which contains most of the data structures of the entire system. Having such one massive class to manage something is hard to maintain/work with.
    * Puzzle/Tournament creation operations are in the Player class which should be Puzzle/Tournament classes
@@ -37,7 +37,7 @@
    * The design is complex and can be further simplified
    * Diamond mark in lines indicating aggregation/composition relationships is on the wrong end
    * Both the PuzzleListManager and PuzzleRecord have copies of the same Puzzle while Both the TournamentListManager and TournamentRecord have copies of the same Tournament. This may lead to inconsistency as one or both copies may become out of synchronization
-   
+
 ## Design 3 (rjohnson348)
 ![rjohnson348 design image](../Design-Individual/rjohnson348/design.png)
 - Simple, yet informative design. Classes are neatly organized and easy to follow. Captures the requirement of the applications elegantly and accurately.
@@ -86,4 +86,9 @@ The team decided to go with a design that was a mixture/compilation of Design 2 
 * Perhaps same thing for ‘‘getTournamentViablePuzzlesForUser’ - what does this mean? (puzzles can’t have been completed or created by the user).
 
 ## Summary
-During this project we learned to discuss and productively critique our peers work. While assessing the pros and cons of each design we quickly decided what our final design should look like. Upon our group reaching this conclusion we easily divided up the work so that each team member could contribute to the deliverable. Working in such a manner shows that we can be given a task or problem and identify appropriate sub-tasks that can me easily handled by individual team members. This was done in an efficient manner such that no tasks were left uncompleted and the final requested deliverable can be turned in on time. 
+
+We also learned a lot from our teammates who have been in the industry for years during the discussion session. The most important one is the level of detail they had gone into during the design phase. The biggest discrepancy between our design is that some of us specify each method that is going to be used so that the results returned is in the exact format as what we need, whereas others' design were more conceptual, hoping to realize the requirement by manipulating the database directly, which is less intuitive and more difficult for other developers to understand. We learned that it’s not only important to get things done, but also make sure that others can easily follow and pick up our work as we’re always working as a team.
+
+With regards to teamwork, we found that group discussion really help brought up a lot of fun and exciting ideas which we didn’t know or didn’t thought about. For example the utility class, which we didn’t notice until Brigit brought up. Exchanging ideas helped us understand and learn from each other. It’s interesting to see how others approach the same problem in a totally different way.
+
+To sum up, during this project we learned to discuss and productively critique our peers work. While assessing the pros and cons of each design we quickly decided what our final design should look like. Upon our group reaching this conclusion we easily divided up the work so that each team member could contribute to the deliverable. Working in such a manner shows that we can be given a task or problem and identify appropriate sub-tasks that can me easily handled by individual team members. This was done in an efficient manner such that no tasks were left uncompleted and the final requested deliverable can be turned in on time. 
