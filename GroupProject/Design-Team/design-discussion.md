@@ -72,7 +72,7 @@
 Missing relationships between classes.
 
 ## Team Design
-![team11 design image](./design-team.pdf)
+![team11 design image](./design-team.png)
 
 The team decided to go with a design that was a mixture/compilation of Design 2 and Design 3. We decided to remove several classes and associated definitions from Design 2 incorporating aspects from Design 3 that handle these removals. Below is a list of the adjustments we made between Design 2 and 3 to come up with our final Team Design.
 
