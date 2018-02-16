@@ -1,7 +1,7 @@
 # Design Discussion
 ## Design 1 (rsilva32)
 ![rsilva32 design image](../Design-Individual/rsilva32/design.png)
-- This design has captured the overall design aspects and logic, simple and easy to follow. However, it’s missing some features such as it doesn’t indicate how the puzzles and tournaments in progress are handled. This design heavily depends on HashMaps and Lists local to Player to keep track of the Puzzle/Tournament records.
+This design has captured the overall design aspects and logic, simple and easy to follow. However, it’s missing some features such as it doesn’t indicate how the puzzles and tournaments in progress are handled. This design heavily depends on HashMaps and Lists local to Player to keep track of the Puzzle/Tournament records.
 
 * Pros:
    * Having a separate Class to handle Statistics is an elegant way to manage statistics and data
@@ -21,7 +21,7 @@
 
 ## Design 2 (bhawley3)
 ![bhawley3 design image](../Design-Individual/bhawley3/design.png)
-- This design captures almost all the requirements of the design while being informative and accurate. However, this design is complex and it is slightly difficult to understand the need for the “InProgress” classes which could have been handled directly in the Puzzle/Tournament record classes.
+This design captures almost all the requirements of the design while being informative and accurate. However, this design is complex and it is slightly difficult to understand the need for the “InProgress” classes which could have been handled directly in the Puzzle/Tournament record classes.
 
 * Pros:
   * Collection/ListManager classes allow for easy management of the various Player, Tournament and Puzzle classes
@@ -29,7 +29,7 @@
   * The operations and state variables are distributed properly and don’t depend on a single class heavily which in turn helps to manage and maintain the design effectively
   * Has indicated all the relevant cardinalities, public/private declarations, and the standard UML symbology is used correctly
   * It’s elegant to have separate classes to denote Puzzle/Tournament statistics(PuzzleStats and TournamentStats) and Puzzle/Tournament records to maintain history and key features effectively
-    *Special notes are added to further describe design decisions
+  * Special notes are added to further describe design decisions
 
 * Cons:
    * ListManagers may be redundant as they appear along the lines of a DB implementation. So may not necessary for the model
@@ -40,7 +40,7 @@
 
 ## Design 3 (rjohnson348)
 ![rjohnson348 design image](../Design-Individual/rjohnson348/design.png)
-- Simple, yet informative design. Classes are neatly organized and easy to follow. Captures the requirement of the applications elegantly and accurately.
+Simple, yet informative design. Classes are neatly organized and easy to follow. Captures the requirement of the applications elegantly and accurately.
 
 * Pros:
   * Uses the standard UML symbology correctly.
@@ -56,7 +56,7 @@
 
 ## Design 4 (hwang404)
 ![hwang404 design image](../Design-Individual/hwang404/design.png)
-- Captures the overall concept and logics required for this application. However, without enough explanation, it’s hard to follow how each requirement is met. Granted that all query is done on the database, necessary methods for a specific query application shall be specifically defined.
+Captures the overall concept and logics required for this application. However, without enough explanation, it’s hard to follow how each requirement is met. Granted that all query is done on the database, necessary methods for a specific query application shall be specifically defined.
 
 * Pros:
   * Classes are sensible and have member variables that are appropriate.
@@ -73,9 +73,7 @@ Missing relationships between classes.
 
 ## Team Design
 ![team11 design image](./design-team.png)
-
 The team decided to go with a design that was a mixture/compilation of Design 2 and Design 3. We decided to remove several classes and associated definitions from Design 2 incorporating aspects from Design 3 that handle these removals. Below is a list of the adjustments we made between Design 2 and 3 to come up with our final Team Design.
-
 
 * Incorporate Record interface/inheritance from Design 3 into Design 2
 * Remove InProgress classes from Design 2 mirroring Design 3 in which the Record has the completed state flag/marker
@@ -92,4 +90,4 @@ We also learned a lot from our teammates who have been in the industry for years
 
 With regards to teamwork, we found that group discussion really help brought up a lot of fun and exciting ideas which we didn’t know or didn’t thought about. For example the utility class, which we didn’t notice until Brigit brought up. Exchanging ideas helped us understand and learn from each other. It’s interesting to see how others approach the same problem in a totally different way.
 
-To sum up, during this project we learned to discuss and productively critique our peers work. While assessing the pros and cons of each design we quickly decided what our final design should look like. Upon our group reaching this conclusion we easily divided up the work so that each team member could contribute to the deliverable. Working in such a manner shows that we can be given a task or problem and identify appropriate sub-tasks that can me easily handled by individual team members. This was done in an efficient manner such that no tasks were left uncompleted and the final requested deliverable can be turned in on time. 
+To sum up, during this project we learned to discuss and productively critique our peers work. While assessing the pros and cons of each design we quickly decided what our final design should look like. Upon our group reaching this conclusion we easily divided up the work so that each team member could contribute to the deliverable. Working in such a manner shows that we can be given a task or problem and identify appropriate sub-tasks that can me easily handled by individual team members. This was done in an efficient manner such that no tasks were left uncompleted and the final requested deliverable can be turned in on time.
