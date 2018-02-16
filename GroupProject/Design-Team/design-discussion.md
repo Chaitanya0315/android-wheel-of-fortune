@@ -72,8 +72,8 @@
 Missing relationships between classes.
 
 ## Team Design
-Team Design to come (TBD)
-## Summary
+![team11 design image](../design-team.png)
+
 The team decided to go with a design that was a mixture/compilation of Design 2 and Design 3. We decided to remove several classes and associated definitions from Design 2 incorporating aspects from Design 3 that handle these removals. Below is a list of the adjustments we made between Design 2 and 3 to come up with our final Team Design.
 
 
@@ -84,6 +84,7 @@ The team decided to go with a design that was a mixture/compilation of Design 2 
 * ‘getTournamentViablePuzzlesForUser()’ language does not match the get tournaments for user. Should make these use the same nomenclature
 * Add note to UML for buyVowel to indicate that prize value will decrement by 300
 * Perhaps same thing for ‘‘getTournamentViablePuzzlesForUser’ - what does this mean? (puzzles can’t have been completed or created by the user).
+* Diamond mark in lines indicating aggregation/composition relationships was on the wrong end in Design 2. which is fixed in the Team Design.
 
 ## Summary
 
