@@ -19,6 +19,14 @@ We are developing an Android mobile application for a ‘Phrase Guessing Game’
 
 ## 3 Team
 
+* Our team consists of 4 memebers.
+  * Robert Dale Johnson
+  * Brigit Hawley
+  * Haohao Wang
+  * Ranmuni Sahan De silva
+
+Each member will be responsible for multiple artifacts while expected to attend and participate actively in regular meetings which are scheduled as needed. In addition, team members will collaborate on Google docs and slack to resolve dendencies and render the support needed by other fellow teammates. Once the development phase is commenced regular code reviews on gitHub are expected by each member for quality assurance purposes.  
+
 *Describe the team and their roles (there may be more roles than there are team members)*
 
 - *Team members' names*
