@@ -49,7 +49,7 @@ None at this time. Will be included later when code sequences are better defined
 
 ## 4 User Interface Design
 
-The following images are by no means final and are subject to change. These are a few screenshots of what the UI might look like
+The following images are by no means final and are subject to change. These are a few screenshots of what the UI might look like.
 
 ![GUI Mockup](../Design-Team/design-mockups.png)
 
