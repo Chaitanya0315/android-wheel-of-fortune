@@ -2,11 +2,11 @@
 
 *This is the template for your project plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<person or team name\>
+**Author**: Team 11
 
 ## 1 Introduction
 
-*Here you introduce the product. Keep this  clean and simple, one or two sentences at most.*
+We are developing an Android mobile application for a ‘Phrase Guessing Game’ which is a variation of ‘Wheel of Fortune’. This app enables interested Users to create/play Puzzles and Tournaments, View statistics for each Puzzle/Tournament and keep track of and continue incomplete tournaments.
 
 ## 2 Process Description
 
