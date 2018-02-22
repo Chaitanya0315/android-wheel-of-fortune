@@ -18,6 +18,7 @@ We are developing an Android mobile application for a ‘Phrase Guessing Game’
 ## 3 Team
 
 * Our team consists of 4 memebers.
+
   * Robert Dale Johnson
   * Brigit Hawley
   * Haohao Wang
@@ -28,28 +29,39 @@ Each member will be responsible for multiple artifacts while expected to attend 
 **Team Roles**
 
 * Lead Software Engineer - Android
+
   * Provide technical leadership to the team while participating in all the phases of the software Development lifecycle.
   * Sets the strategic direction of the development activities while ensuring best practises to achieve product goals. 
   * Sets the guidelines to the team to develop software which consists of optimized, stable, maintainable, working and testable source code.  
   * Provide technical expertise in evaluating, reviewing and  ensuring quality of source code while ensuring best practises. 
 
 * Planning Engineer
+
   * Ensure if the design activities follow the ‘Unified software Process’. 
   * Maintain a proper software development lifecycle from design phase to the deployment phase in each iteration. Ensure that project objectives are accomplished while meeting proper deadlines. 
   * Manage the project backlog/stories with activity name, activity description, entrance criteria and exit criteria and modify activities  as required after reviewing progress of each team member.
 
 * Quality Assurance Engineer
+
   * Responsible for developing and executing overall test strategy, test approach and test plans. 
   * Raise recommendations based on analysis of test results for feature modification and relevant optimisations. 
   * Identify test scenarios, analyze requirements and propose relevant test plans. Automate test cases and execute tests in both ways : manual and automated.  
 
 * Software Engineer - Android
+
   * Participate in all the phases of the software Development life cycle which includes design, development, testing, deployment and maintenance. 
   * Provide technical expertise in evaluating, reviewing and  ensuring quality of source code while ensuring best practises. 
   * Perform application programming tasks including coding, debugging, testing, documenting and maintaining source code. 
   * Participate in code reviews and regular meetings to follow best practises and strategic direction of the development activities while delivering working code meeting the deadlines.
 
 
-- *Team members' names*
-- *Roles, with a short description of each role*
-- *Table showing which team member(s) has which role(s)*
+**How our team members will contribute to meet the core objectives:**
+
+
+               |       Team Member      |                              Roles                             |
+               |:----------------------:|:--------------------------------------------------------------:|
+               | Robert Dale Johnson    | Lead Software Engineer - Android / Quality Assurance Engineer  |
+               | Brigit Hawley          | Software Engineer - Android / Planning Engineer                |
+               | Wang Haohao            | Software Engineer - Android / Quality Assurance Engineer       |
+               | Ranmuni Sahan De Silva | Software Engineer - Android / Planning Engineer                |
+
