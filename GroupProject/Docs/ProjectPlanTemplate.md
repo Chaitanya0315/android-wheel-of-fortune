@@ -58,10 +58,10 @@ Each member will be responsible for multiple artifacts while expected to attend 
 **How our team members will contribute to meet the core objectives:**
 
 
-               |       Team Member      |                              Roles                             |
-               |:----------------------:|:--------------------------------------------------------------:|
-               | Robert Dale Johnson    | Lead Software Engineer - Android / Quality Assurance Engineer  |
-               | Brigit Hawley          | Software Engineer - Android / Planning Engineer                |
-               | Wang Haohao            | Software Engineer - Android / Quality Assurance Engineer       |
-               | Ranmuni Sahan De Silva | Software Engineer - Android / Planning Engineer                |
+|       Team Member      |                              Roles                             |
+|:----------------------:|:--------------------------------------------------------------:|
+| Robert Dale Johnson    | Lead Software Engineer - Android / Quality Assurance Engineer  |
+| Brigit Hawley          | Software Engineer - Android / Planning Engineer                |
+| Wang Haohao            | Software Engineer - Android / Quality Assurance Engineer       |
+| Ranmuni Sahan De Silva | Software Engineer - Android / Planning Engineer                |
 
