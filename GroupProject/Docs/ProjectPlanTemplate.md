@@ -8,9 +8,9 @@ Team 11 (hereafter referred to as 'we') is developing an Android mobile applicat
 
 ## 2 Process Description
 
-The ‘Phrase Guessing Game’ will be developed using the Unified Software Process. As a result our development process will be representative of the included UML diagrams, use case driven, architecture centric, iterative, and also incremental. In each iteration the whole team will be involved in business modeling and requirements, design and analysis, implementation, testing, and deployment phases. A set of documents and artifacts will be generated as a part of this development process and they will be updated as the project evolves. 
+The ‘Phrase Guessing Game’ will be developed using the Unified Software Process. As a result our development process will be representative of the included UML diagrams, use case driven, architecture centric, iterative, and also incremental. In each iteration the whole team will be involved in business modeling and requirements, design and analysis, implementation, testing, and deployment phases. A set of documents and artifacts will be generated as a part of this development process and they will be updated as the project evolves.
 
-The following activities describe the overall software development process that this team plans to use. 
+The following activities describe the overall software development process that this team plans to use.
 
 <br/>
 
@@ -95,27 +95,27 @@ Each member will be responsible for multiple artifacts while expected to attend 
 * Lead Software Engineer - Android
 
   * Provide technical leadership to the team while participating in all the phases of the software Development lifecycle.
-  * Sets the strategic direction of the development activities while ensuring best practises to achieve product goals. 
+  * Sets the strategic direction of the development activities while ensuring best practises to achieve product goals.
   * Sets the guidelines to the team to develop software which consists of optimized, stable, maintainable, working and testable source code.  
-  * Provide technical expertise in evaluating, reviewing and  ensuring quality of source code while ensuring best practises. 
+  * Provide technical expertise in evaluating, reviewing and  ensuring quality of source code while ensuring best practises.
 
 * Planning Engineer
 
-  * Ensure if the design activities follow the ‘Unified Software Process’. 
-  * Maintain a proper software development lifecycle from design phase to the deployment phase in each iteration. Ensure that project objectives are accomplished while meeting proper deadlines. 
+  * Ensure if the design activities follow the ‘Unified Software Process’.
+  * Maintain a proper software development lifecycle from design phase to the deployment phase in each iteration. Ensure that project objectives are accomplished while meeting proper deadlines.
   * Manage the project backlog/stories with activity name, activity description, entrance criteria and exit criteria and modify activities  as required after reviewing progress of each team member.
 
 * Quality Assurance Engineer
 
-  * Responsible for developing and executing overall test strategy, test approach and test plans. 
-  * Raise recommendations based on analysis of test results for feature modification and relevant optimisations. 
+  * Responsible for developing and executing overall test strategy, test approach and test plans.
+  * Raise recommendations based on analysis of test results for feature modification and relevant optimisations.
   * Identify test scenarios, analyze requirements and propose relevant test plans. Automate test cases and execute tests in both ways : manual and automated.  
 
 * Software Engineer - Android
 
-  * Participate in all the phases of the software Development life cycle which includes design, development, testing, deployment and maintenance. 
-  * Provide technical expertise in evaluating, reviewing and  ensuring quality of source code while ensuring best practises. 
-  * Perform application programming tasks including coding, debugging, testing, documenting and maintaining source code. 
+  * Participate in all the phases of the software Development life cycle which includes design, development, testing, deployment and maintenance.
+  * Provide technical expertise in evaluating, reviewing and  ensuring quality of source code while ensuring best practises.
+  * Perform application programming tasks including coding, debugging, testing, documenting and maintaining source code.
   * Participate in code reviews and regular meetings to follow best practises and strategic direction of the development activities while delivering working code meeting the deadlines.
 
 
@@ -126,6 +126,5 @@ Each member will be responsible for multiple artifacts while expected to attend 
 |:----------------------:|:--------------------------------------------------------------:|
 | Robert Dale Johnson    | Lead Software Engineer - Android / Quality Assurance Engineer  |
 | Brigit Hawley          | Software Engineer - Android / Planning Engineer                |
-| Wang Haohao            | Software Engineer - Android / Quality Assurance Engineer       |
+| Haohao Wang            | Software Engineer - Android / Quality Assurance Engineer       |
 | Ranmuni Sahan De Silva | Software Engineer - Android / Planning Engineer                |
-
