@@ -29,11 +29,11 @@
 
 ### 2.1 Component Diagram
 
-![Class Diagram](../Design-Team/component-diagram.png)
+![Component Diagram](../Design-Team/Resources/component-diagram.png)
 
 ### 2.2 Deployment Diagram
 
-*This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
+![Deployment Diagram](../Design-Team/Resources/deployment-diagram.png)
 
 ## 3 Low-Level Design
 
@@ -51,5 +51,5 @@ None at this time. Will be included later when code sequences are better defined
 
 The following images are by no means final and are subject to change. These are a few screenshots of what the UI might look like.
 
-![GUI Mockup](../Design-Team/design-mockups.png)
+![GUI Mockup](../Design-Team/Resources/design-mockups.png)
 

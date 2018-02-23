@@ -4,13 +4,13 @@
 
 ## 1 Introduction
 
-We are developing an Android mobile application for a ‘Phrase Guessing Game’ which is a variation of ‘Wheel of Fortune’. This app enables interested Users to create/play Puzzles and Tournaments, View statistics for each Puzzle/Tournament and keep track of and continue incomplete tournaments.
+Team 11 (hereafter referred to as 'we') is developing an Android mobile application for a ‘Phrase Guessing Game’ which is a variation of ‘Wheel of Fortune’. This app enables interested Users to create/play Puzzles and Tournaments, View statistics for each Puzzle/Tournament and continue incomplete tournaments.
 
 ## 2 Process Description
 
-The ‘Phrase Guessing Game’ will be developed using the Unified Software Process. As a result out development process will be tightly related to the UML, use case driven, Architecture Centric, Iterative and Incremental. In each iteration team will involve in Business modeling and requirements, Design and Analysis, Implementation, testing, Deployment phases. A set of documents and artifacts will be generated as a part of this development process and they will be updated with more details and modifications for each deliverable. 
+The ‘Phrase Guessing Game’ will be developed using the Unified Software Process. As a result our development process will be representative of the included UML diagrams, use case driven, architecture centric, iterative, and also incremental. In each iteration the whole team will be involved in business modeling and requirements, design and analysis, implementation, testing, and deployment phases. A set of documents and artifacts will be generated as a part of this development process and they will be updated as the project evolves. 
 
-Following activities describes the overall Software Development Process
+The following activities describe the overall software development process that this team plans to use. 
 
 <br/>
 
@@ -101,7 +101,7 @@ Each member will be responsible for multiple artifacts while expected to attend 
 
 * Planning Engineer
 
-  * Ensure if the design activities follow the ‘Unified software Process’. 
+  * Ensure if the design activities follow the ‘Unified Software Process’. 
   * Maintain a proper software development lifecycle from design phase to the deployment phase in each iteration. Ensure that project objectives are accomplished while meeting proper deadlines. 
   * Manage the project backlog/stories with activity name, activity description, entrance criteria and exit criteria and modify activities  as required after reviewing progress of each team member.
 
