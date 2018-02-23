@@ -3,7 +3,7 @@
 
 ## 1 Use Case Diagram
 
-![Use Case Diagram](../Design-Team/Resources/use_case_diagram.png)
+![Use Case Diagram](https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/blob/dev_GroupProjectD2/GroupProject/Docs/use_case_diagram.png)
 
 ## 2 Use Case Descriptions
 
