@@ -4,13 +4,13 @@
 
 ## 1 Design Considerations
 
-*The subsections below describe the issues that need to be addressed or resolved prior to or while completing the design, as well as issues that may influence the design process.*
+Below are some issues that need to be kept in mind while completing this project. Note, everything in this document is subject to change and will updated as the project evolves. 
 
 ### 1.1 Assumptions
 
 * This application is Android only. No other platforms will be supported.
 * The application is meant to be run from a single device (i.e. no cloud saving)
-* Multiple users can use the same device. 
+* Multiple users can use the same device.
 
 ### 1.2 Constraints
 
@@ -25,7 +25,7 @@
 
 ## 2 Architectural Design
 
-*The architecture provides the high-level design view of a system and provides a basis for more detailed design work. These subsections describe the top-level components of the system you are building and their relationships.*
+The following two diagrams give high level overviews of the system's components. Both follow standard UML conventions. 
 
 ### 2.1 Component Diagram
 
@@ -37,7 +37,7 @@
 
 ## 3 Low-Level Design
 
-*Describe the low-level design for each of the system components identified in the previous section. For each component, you should provide details in the following UML diagrams to show its internal structure.*
+This section gives a lower-level look into the system's structure. More diagrams will be added as the components become more clearly implemented. 
 
 ### 3.1 Class Diagram
 
@@ -49,7 +49,6 @@ None at this time. Will be included later when code sequences are better defined
 
 ## 4 User Interface Design
 
-The following images are by no means final and are subject to change. These are a few screenshots of what the UI might look like.
+Here are some rough drafts of the GUI for the 'Wheel of Fortune' Team11 application. The following images are by no means final and are subject to change. 
 
 ![GUI Mockup](../Design-Team/Resources/design-mockups.png)
-
