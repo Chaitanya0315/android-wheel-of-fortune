@@ -8,6 +8,9 @@ We are developing an Android mobile application for a ‘Phrase Guessing Game’
 
 ## 2 Process Description
 
+The ‘Phrase Guessing Game’ will be developed using the Unified Software Process. As a result out development process will be tightly related to the UML, use case driven, Architecture Centric, Iterative and Incremental. In each iteration team will involve in Business modeling and requirements, Design and Analysis, Implementation, testing, Deployment phases. A set of documents and artifacts will be generated as a part of this development process and they will be updated with more details and modifications for each deliverable. 
+
+
 *Process description as a set of activities; for each activity, provide the following:*
 
 - *Activity name (verb or verb phrase)*
