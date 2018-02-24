@@ -30,6 +30,19 @@ Currently the only planned testing technologies with be JUnit. If the project pr
 
 ## 2 Test Cases
 
+Test cases are linked below.
+
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Dropbox | [plugins/dropbox/README.md][PlDb] | README |
+| Github | [plugins/github/README.md][PlGh] | README |
+| Google Drive | [plugins/googledrive/README.md][PlGd] | README |
+| OneDrive | [plugins/onedrive/README.md][PlOd] | README |
+| Medium | [plugins/medium/README.md][PlMe] | README |
+| Google Analytics | [plugins/googleanalytics/README.md][PlGa] | README |
+
+
+
 *This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
 
 
