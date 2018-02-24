@@ -10,8 +10,8 @@
 **SignUp**
 
 * Requirements: A user may choose to register as a new user when starting the Application.
-* Pre-conditions: None.
-* Post-conditions: The username must be unique, i.e. non-existent in the database.
+* Pre-conditions: The username must be unique, i.e. non-existent in the database.
+* Post-conditions: New player is created.
 * Scenarios: When creating a new player, the system will ask the user to input:
    * Enter the player’s first name.
    * Enter the player’s last name.
@@ -23,8 +23,8 @@
 **Login**
 
 * Requirements: A user may choose to login when starting the Application.
-* Pre-conditions: None.
-* Post-conditions: The username must exist in the database.
+* Pre-conditions: The username must exist in the database.
+* Post-conditions: Display the UI for user to proceed.
 * Scenarios: If the username doesn't exist in the database, an error message will pop up asking for a correct username. After logging in, the application will allow players to:
    * Create new puzzle.
    * Solve a random puzzle.
@@ -36,14 +36,14 @@
 
 * Requirements: A user can create a new puzzle upon login.
 * Pre-conditions: The user is logged in.
-* Post-conditions: None.
+* Post-conditions: A new puzzle is added to the database.
 * Scenarios: To create a puzzle, the system will ask the user to input a phrase and the maximum number of allowed wrong guesses.The system will save and return the unique identifier for the puzzle.
 
 **Solve Puzzle**
 
 * Requirements: A user can solve a new puzzle upon login.
-* Pre-conditions: The user is logged in.
-* Post-conditions: None.
+* Pre-conditions: The user is logged in; the puzzle is not created by the user and has not been played.
+* Post-conditions: Database is updated with the total prize the player achieved on the puzzle.
 * Scenarios: When the player is solving the puzzle, the system will:
    * Display the puzzle phrase with all non-alphabetic characters shown, and regular letters replaced with blanks. It should also display a list of all letters not yet chosen, the total prize, with an initial value of $0, and the remaining number of allowed wrong guesses.
    * Allow the player to choose, at every turn, whether to guess a consonant, buy a vowel, or solve the puzzle.
@@ -64,8 +64,8 @@
 **Create Tournament**
 
 * Requirements: A user can create a new tournament upon login.
-* Pre-conditions: The user is logged in.
-* Post-conditions: None.
+* Pre-conditions: The user is logged in; tournament name must be unique.
+* Post-conditions: A new tournament is added into the database and available for players to play.
 * Scenarios: To create a tournament:
    * The system will ask the user to input 1-5 puzzle ids, tournament name.The system will save and return the unique identifier for the puzzle.
    * Either receive a confirmation that the tournament has been created and return to the menu or receive an error if the tournament name is already taken and be offered the option to pick a different name.
@@ -73,9 +73,9 @@
 **Play Tournament**
 
 * Requirements: A user can play a new tournament or join an existing tournament.
-* Pre-conditions: The user is logged in.
-* Post-conditions: None.
-* Scenarios: When the player is playing a tournament, the system will allow user to either play a new tournament or join an existing tournament
+* Pre-conditions: The user is logged in. If the player selects to play new tournament, valid tournaments shall not contain puzzles created by the player or all puzzles have been completed by the player.
+* Post-conditions: Database is updated with the total prize the player achieved in the tournament.
+* Scenarios: When the player is playing a tournament, the system will allow user to either play a new tournament or join an existing tournament.
    * If play a list of new tournament available:
      * Display the available tournament to the user.
      * Display the first puzzle in the tournament after the user made the selection.
@@ -88,7 +88,7 @@
 
 * Requirements: A user can view statistics of the puzzle and tournament.
 * Pre-conditions: The user is logged in.
-* Post-conditions: None.
+* Post-conditions: Required information shall be displayed.
 * Scenarios: When the player selects to view stats, four pieces of info are displayed:
   * The list of puzzles completed by that player with the prize the player won.
   * The list of tournaments completed by that player with the prize the player won.
