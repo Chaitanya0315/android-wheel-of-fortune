@@ -81,6 +81,7 @@ Test cases will be developed as follows for each subsection.
 | Test if the puzzle data has been added into the database| guess a puzzle correctly; select view stats in the main menu | the puzzle just played shall display the correct prize as expected| --- | --- |
 
 **Play Tournament UseCase**
+
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
 | Test if joining an invalid tournament is possible| Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament | tournament created by the 2nd user shall always be displayed| --- | --- |
