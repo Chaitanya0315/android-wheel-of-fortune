@@ -6,10 +6,12 @@
 
 ### 1.1 Overall strategy
 
-Our testing strategy will be as follows:
+Our testing strategy will focus on three main areas: UI Testing, Integaryions Testing and Unit Testing as described in detail below.
+
 * Classes should be developed in such a manner that unit tests CAN (and should) be written. This means striving for low dependency across classes and creating modular interfaces. Any classes that can be unit tested will be. Unit tests should be automatable.
-* Collection classes or groups of classes that compose specific subsystems will be subject to integration tests. Integration tests will not be implemented for purely contrived subsystems. This means that we will primarily focust on testing subsystems that will exist in the 'Wheel of Fortune' application and no more. Integration tests should be automatable. 
+* Collection classes or groups of classes that compose specific subsystems will be subject to integration tests. Integration tests will not be implemented for purely contrived subsystems. This means that we will primarily focus on testing subsystems that will exist in the 'Wheel of Fortune' application and no more. Integration tests should be automatable. 
 * We have decided to neglect writing a full system test in an automative form. All full system level tests will be done in the manual QA testing process. This does not mean that these tests will not be recorded. Specific step by step instructions will be provided for testing specific use cases. 
+* UI tests are slow in general as we have to load the applocation on to an emulator but an automated UI tets using tools such as Espresso, UI automator will enable us to identify errors that may have not captured through unit tests, system level tests and integration tests.
 
 To some degree, all team members will be responsible for testing different aspects of the project. It is recommended that a different engineer be responsible for testing a newly authored code. This rule does not have to be strictly followed, but should be viewed as a best practice. 
 
