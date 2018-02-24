@@ -47,7 +47,10 @@ Test cases will be developed as follows for each subsection.
 |Test if login function works correctly end to end| create a user with username "XXX"; login as the just just created | Display UI with correct options for player to choose from | --- | --- |
 | Test if the system allows creating a player with missing user input | leave one of the required input box blank | error message and submit is non-clickable | --- | --- |
 | Test if the system allows Login as a player with missing user input | leave the required username inputbox blank | error message and submit is non-clickable | --- | --- |
-<br /><br /><br />
+
+<br />
+<br />
+<br />
 **Create Puzzle UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -55,7 +58,9 @@ Test cases will be developed as follows for each subsection.
 | Test if the system allows creating a puzzle with missing user input | leave one of the required input box blank | error message and submit is non-clickable | --- | --- |
 | Test if the system allows creating a puzzle with negative or greater than 9 allowable guesses | input negative or numbers greater than 9 in the max allowable guesses input box | error message and submit is non-clickable | --- | --- |
 
-<br /><br /><br />
+<br />
+<br />
+<br />
 **Create Tournament UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -65,7 +70,10 @@ Test cases will be developed as follows for each subsection.
 | Test if the system will select a puzzle already played by the user in a tournament| create a tournament with 5 puzzles and complete all of them; create 6th puzzle; select play random puzzle 10 times | the 6th puzzle shall always be selected| --- | --- |
 | Test if the system will select a puzzle created by the User| create 6 puzzles where only one of them by the tester; select create Tournament; repeat the test for few times |Tester/User should not see the Puzzle he/she created in each iteration| --- | --- |
 | Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | --- | --- |
-<br /><br /><br />
+
+<br />
+<br />
+<br />
 **Solve Puzzle UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -76,14 +84,20 @@ Test cases will be developed as follows for each subsection.
 | Test if solve the puzzle function acts correctly| select solve a puzzle; make a guess | all remaining blanks has to be filled; correct guess will increase the prize value by $1000 for each letter not yet revealed; wrong guess will receive $0 for the puzzle; ends the game| --- | --- |
 | Test if the exit/continue functions for Puzzles act correctly| start a puzzle; select exit; select continue; select exit; select leave | confirmation window pops up when selecting exit for the first time; continue button available for user and takes user back to the game; return to the main menu when selecting exit again before clicking on the leave button on the confirmation window| --- | --- |
 | Test if an already played Puzzle is displayed to the User to play | Create muliple Puzzles fro the Tester's Player account; select solve Random Puzzle option | Tester should not see any Puzzle as a option to play| --- | --- |
-<br /><br /><br />
+
+<br />
+<br />
+<br />
 **Database Subsystem**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
 | Test if the database records the puzzle stats correctly when the player interrupt and exits the game| After the last puzzle play click on view stats | puzzle shall be stored in the database as already being played by the user; prize for the puzzle just played shall be the prize shown when the player left the game| --- | --- |
 |Test if the database records the puzzle stats correctly when the player solve the puzzle correctly| guess a puzzle correctly; select view stats in the main menu | the puzzle just played shall display the correct prize as expected| --- | --- |
-<br /><br /><br />
+
+<br />
+<br />
+<br />
 **Play Tournament UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -92,7 +106,9 @@ Test cases will be developed as follows for each subsection.
 | Test if joining an invalid tournament is possible - Senario 2| Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again | the 3rd tournament shall always be displayed| --- | --- |
 | Test the 'continue a tournament function'| 2nd user starts 3rd tournament; quit after completing the 1st puzzle; select join an existing tournament; create the 4th tournament | the 3rd tournament shall always be displayed| --- | --- |
 
-<br /><br /><br />
+<br />
+<br />
+<br />
 **Generate Statistics UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
