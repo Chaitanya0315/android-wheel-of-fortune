@@ -51,6 +51,7 @@ Test cases will be developed as follows for each subsection.
 <br />
 <br />
 <br />
+
 **Create Puzzle UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -61,6 +62,7 @@ Test cases will be developed as follows for each subsection.
 <br />
 <br />
 <br />
+
 **Create Tournament UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -74,6 +76,7 @@ Test cases will be developed as follows for each subsection.
 <br />
 <br />
 <br />
+
 **Solve Puzzle UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -88,6 +91,7 @@ Test cases will be developed as follows for each subsection.
 <br />
 <br />
 <br />
+
 **Database Subsystem**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -98,6 +102,7 @@ Test cases will be developed as follows for each subsection.
 <br />
 <br />
 <br />
+
 **Play Tournament UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -109,6 +114,7 @@ Test cases will be developed as follows for each subsection.
 <br />
 <br />
 <br />
+
 **Generate Statistics UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
