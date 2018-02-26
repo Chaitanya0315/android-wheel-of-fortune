@@ -7,7 +7,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import edu.gatech.seclass.sdpguessit.data.GuessItDB;
 import edu.gatech.seclass.sdpguessit.data.managers.PlayerManager;
 import edu.gatech.seclass.sdpguessit.data.managers.PuzzleManager;
 import edu.gatech.seclass.sdpguessit.data.managers.TournamentManager;
@@ -27,25 +26,19 @@ public class AppModule {
 
     @Provides
     @Singleton
-    PlayerManager providesPlayerManager(GuessItDB guessItDB) {
-        return new PlayerManager(guessItDB);
+    PlayerManager providesPlayerManager() {
+        return new PlayerManager();
     }
 
     @Provides
     @Singleton
-    PuzzleManager providesPuzzleManager(GuessItDB guessItDB) {
-        return new PuzzleManager(guessItDB);
+    PuzzleManager providesPuzzleManager() {
+        return new PuzzleManager();
     }
 
     @Provides
     @Singleton
-    TournamentManager providesTournamentManager(GuessItDB guessItDB) {
-        return new TournamentManager(guessItDB);
-    }
-
-    @Provides
-    @Singleton
-    GuessItDB providesGuessItDB(Context context) {
-        return new GuessItDB(context);
+    TournamentManager providesTournamentManager() {
+        return new TournamentManager();
     }
 }
