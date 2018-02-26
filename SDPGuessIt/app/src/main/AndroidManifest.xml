@@ -3,19 +3,44 @@
     package="edu.gatech.seclass.sdpguessit">
 
     <application
+        android:name=".GuessItApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CreatePuzzleActivity"
+            android:label="@string/title_activity_create_puzzle"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CreateTournamentActivity"
+            android:label="@string/title_activity_create_tournament"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PlayPuzzleActivity"
+            android:label="@string/title_activity_play_puzzle"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PlayTournamentActivity"
+            android:label="@string/title_activity_play_tournament"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

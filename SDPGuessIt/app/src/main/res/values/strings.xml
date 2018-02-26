@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GuessIt</string>
+    <string name="title_activity_create_puzzle">CreatePuzzleActivity</string>
+    <string name="title_activity_create_tournament">CreateTournamentActivity</string>
+    <string name="title_activity_play_puzzle">PlayPuzzleActivity</string>
+    <string name="title_activity_play_tournament">PlayTournamentActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
