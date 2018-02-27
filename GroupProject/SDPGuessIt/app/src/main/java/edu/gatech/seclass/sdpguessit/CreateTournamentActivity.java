@@ -12,28 +12,32 @@ import android.view.View;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import edu.gatech.seclass.sdpguessit.data.managers.TournamentManager;
 
-
 public class CreateTournamentActivity extends AppCompatActivity {
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.fab) FloatingActionButton fab;
-
     @Inject TournamentManager tournamentManager;
+
+    @BindView(R.id.toolbar) Toolbar toolbar;
+
+    private Unbinder unbinder;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_tournament);
-        setSupportActionBar(toolbar);
+        GuessItApplication.component(this).inject(this);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        setContentView(R.layout.activity_create_tournament);
+        unbinder = ButterKnife.bind(this);
+
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 
     public static final Intent newIntent(Context context) {

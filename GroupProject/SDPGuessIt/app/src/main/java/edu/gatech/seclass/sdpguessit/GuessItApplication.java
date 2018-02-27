@@ -1,15 +1,15 @@
 package edu.gatech.seclass.sdpguessit;
 
-import android.app.Application;
 import android.content.Context;
+
+import com.orm.SugarApp;
 
 import edu.gatech.seclass.sdpguessit.di.AppComponent;
 import edu.gatech.seclass.sdpguessit.di.AppModule;
 import edu.gatech.seclass.sdpguessit.di.DaggerAppComponent;
 import timber.log.Timber;
 
-
-public class GuessItApplication extends Application {
+public class GuessItApplication extends SugarApp {
     private AppComponent appComponent;
 
     @Override

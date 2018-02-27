@@ -13,37 +13,40 @@ import android.view.View;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import edu.gatech.seclass.sdpguessit.data.managers.TournamentManager;
-
 
 public class PlayTournamentActivity extends AppCompatActivity {
     private static final String EXTRA_ID = "extra:tournament_id";
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.fab) FloatingActionButton fab;
-
-    private String id;
-
     @Inject TournamentManager tournamentManager;
+
+    @BindView(R.id.toolbar) Toolbar toolbar;
+
+    private Unbinder unbinder;
+    private Long id;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        GuessItApplication.component(this).inject(this);
+
         setContentView(R.layout.activity_play_tournament);
+        unbinder = ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
 
-        id = getIntent().getStringExtra(EXTRA_ID);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        id = getIntent().getLongExtra(EXTRA_ID, -1L);
     }
 
-    public static final Intent newIntent(Context context, String id) {
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+    }
+
+    public static final Intent newIntent(Context context, Long id) {
         Intent intent = new Intent(context, PlayTournamentActivity.class);
 
         intent.putExtra(EXTRA_ID, id);

@@ -9,4 +9,15 @@ public class TournamentRecord extends SugarRecord<TournamentRecord> {
     Tournament tournament;
     List<Puzzle> puzzles;
     boolean isComplete;
+
+    public TournamentRecord(Player player, Tournament tournament, List<Puzzle> puzzles, boolean isComplete) {
+        this.player = player;
+        this.tournament = tournament;
+        this.puzzles = puzzles;
+        this.isComplete = isComplete;
+    }
+
+    public TournamentRecord() {
+
+    }
 }

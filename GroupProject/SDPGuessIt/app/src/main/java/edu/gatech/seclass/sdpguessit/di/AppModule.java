@@ -26,8 +26,8 @@ public class AppModule {
 
     @Provides
     @Singleton
-    PlayerManager providesPlayerManager() {
-        return new PlayerManager();
+    PlayerManager providesPlayerManager(Context context) {
+        return new PlayerManager(context);
     }
 
     @Provides

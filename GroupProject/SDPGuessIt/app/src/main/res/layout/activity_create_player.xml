@@ -31,38 +31,46 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/phrase"
+                android:id="@+id/firstname"
                 android:layout_width="@dimen/field_width"
                 android:layout_height="wrap_content"
-                android:hint="Phrase" />
+                android:hint="First Name" />
 
             <android.support.v4.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/field_space" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Max Guesses" />
-
-                <Spinner
-                    android:id="@+id/maxguesses"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/max_guesses" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/add_puzzle"
+            <EditText
+                android:id="@+id/lastname"
                 android:layout_width="@dimen/field_width"
                 android:layout_height="wrap_content"
-                android:text="Add Puzzle" />
+                android:hint="Last Name" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_space" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="@dimen/field_width"
+                android:layout_height="wrap_content"
+                android:hint="Username" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_space" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="@dimen/field_width"
+                android:layout_height="wrap_content"
+                android:hint="Email" />
+
+            <Button
+                android:id="@+id/add_player"
+                android:layout_width="@dimen/field_width"
+                android:layout_height="wrap_content"
+                android:text="Add Player" />
 
         </LinearLayout>
 
