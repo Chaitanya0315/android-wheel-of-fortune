@@ -21,6 +21,11 @@ public class PuzzleManager {
         return Puzzle.listAll(Puzzle.class);
     }
 
+    public List<Puzzle> getPlayablePuzzlesForUser(Player player){
+        // TODO: implement proper filtering using player
+        return  getPuzzles();
+    }
+
     public List<PuzzleRecord> getPuzzleRecords() {
         return PuzzleRecord.listAll(PuzzleRecord.class);
     }
@@ -30,7 +35,34 @@ public class PuzzleManager {
     }
 
     public PuzzleRecord addNewPuzzleRecord(Player player, Puzzle puzzle) {
-        PuzzleRecord puzzleRecord = new PuzzleRecord(player, puzzle, 0, new ArrayList<Character>(0), puzzle.getMaxGuesses(), false);
+        PuzzleRecord puzzleRecord = null;
+        for (PuzzleRecord pr : getPuzzleRecords()) {
+            if(pr.getPuzzle().getId() == puzzle.getId() && pr.getPlayer().getId() == player.getId()){
+                puzzleRecord = pr;
+                break;
+            }
+        }
+
+        if(puzzleRecord == null) {
+            puzzleRecord = new PuzzleRecord(player, puzzle, 0, "", puzzle.getMaxGuesses(), false);
+            puzzleRecord.save();
+        }
+
         return puzzleRecord;
+    }
+
+    public boolean doesPuzzleRecordExist(Player player, Puzzle puzzle){
+        return getPuzzleRecord(player, puzzle) != null;
+    }
+
+    public PuzzleRecord getPuzzleRecord(Player player, Puzzle puzzle) {
+        List<PuzzleRecord> puzzleRecords = getPuzzleRecords();
+        for(PuzzleRecord  puzzleRecord : puzzleRecords){
+            if(puzzleRecord.getPlayer().getId() == player.getId() && puzzleRecord.getPuzzle().getId() == puzzle.getId()){
+                return puzzleRecord;
+            }
+        }
+
+        return null;
     }
 }

@@ -2,7 +2,10 @@ package edu.gatech.seclass.sdpguessit.data.models;
 
 import android.text.TextUtils;
 
+import com.orm.StringUtil;
 import com.orm.SugarRecord;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,18 +19,18 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
     Player player;
     Puzzle puzzle;
     int prizeValue;
-    List<Character> guessedLetters;
+    String guessedLettersCSV;
     int remainingGuessCount;
     boolean isComplete;
 
     public PuzzleRecord() {
     }
 
-    public PuzzleRecord(Player player, Puzzle puzzle, int prizeValue, List<Character> guessedLetters, int remainingGuessCount, boolean isComplete) {
+    public PuzzleRecord(Player player, Puzzle puzzle, int prizeValue, String guessedLettersCSV, int remainingGuessCount, boolean isComplete) {
         this.player = player;
         this.puzzle = puzzle;
         this.prizeValue = prizeValue;
-        this.guessedLetters = guessedLetters;
+        this.guessedLettersCSV = guessedLettersCSV;
         this.remainingGuessCount = remainingGuessCount;
         this.isComplete = isComplete;
     }
@@ -37,7 +40,7 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
         StringBuilder sb = new StringBuilder(puzzlePhrase.length);
 
         for (Character character : puzzlePhrase) {
-            if (guessedLetters.contains(character) || !Character.isLetter(character)) {
+            if (getGuessedLetters().contains(character) || !Character.isLetter(character)) {
                 sb.append(character);
             } else {
                 sb.append("*");
@@ -45,6 +48,14 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
         }
 
         return sb.toString();
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Puzzle getPuzzle() {
+        return puzzle;
     }
 
     public int getPrizeValue() {
@@ -61,7 +72,7 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
 
     public List<Character> getUnChosenLetters() {
         List<Character> unchosen = new ArrayList<>(getPossibleLetters());
-        unchosen.removeAll(guessedLetters);
+        unchosen.removeAll(getGuessedLetters());
         unchosen.removeAll(getVowelLetters());
 
         return unchosen;
@@ -69,13 +80,24 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
 
     public List<Character> getUnChosenVowels() {
         List<Character> unchosen = new ArrayList<>(getVowelLetters());
-        unchosen.removeAll(guessedLetters);
+        unchosen.removeAll(getGuessedLetters());
 
         return unchosen;
     }
 
+    public List<Character> getGuessedLetters(){
+        String[] guessedLettersArray = StringUtils.split(guessedLettersCSV, '.');
+        List<Character> guessedLetters = new ArrayList<>(guessedLettersArray.length);
+
+        for(String guessedLetter : guessedLettersArray){
+            guessedLetters.add(guessedLetter.charAt(0));
+        }
+
+        return guessedLetters;
+    }
+
     public void guessConsonantForPrizeValue(Character character, int prizeValue) {
-        guessedLetters.add(Character.toUpperCase(character));
+        guessedLettersCSV += ',' + Character.toUpperCase(character);
 
         List<Character> upperCasePhrase = phraseToUpperCharacterList();
         Character upperCharacter = Character.toUpperCase(character);
@@ -92,7 +114,7 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
     }
 
     public void buyVowel(Character character){
-        guessedLetters.add(Character.toUpperCase(character));
+        guessedLettersCSV += ',' + Character.toUpperCase(character);
 
         List<Character> upperCasePhrase = phraseToUpperCharacterList();
 

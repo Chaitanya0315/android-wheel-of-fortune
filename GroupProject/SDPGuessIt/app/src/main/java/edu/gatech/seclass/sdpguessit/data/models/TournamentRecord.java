@@ -20,4 +20,16 @@ public class TournamentRecord extends SugarRecord<TournamentRecord> {
     public TournamentRecord() {
 
     }
+
+    public Tournament getTournament() {
+        return tournament;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void markComplete(){
+        isComplete = true;
+    }
 }

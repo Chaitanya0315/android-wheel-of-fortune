@@ -23,6 +23,7 @@ import edu.gatech.seclass.sdpguessit.data.managers.PlayerManager;
 import edu.gatech.seclass.sdpguessit.data.managers.PuzzleManager;
 import edu.gatech.seclass.sdpguessit.data.managers.TournamentManager;
 import edu.gatech.seclass.sdpguessit.data.models.Puzzle;
+import edu.gatech.seclass.sdpguessit.data.models.Tournament;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -57,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.play_puzzle)
     void playPuzzle() {
-        // TODO: prompt for puzzle selection with proper filtering
-        List<Puzzle> puzzles = puzzleManager.getPuzzles();
+        List<Puzzle> puzzles = puzzleManager.getPlayablePuzzlesForUser(playerManager.getCurrentLoggedInPlayer());
         final PuzzleAdapter puzzleAdapter = new PuzzleAdapter(puzzles);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Select Puzzle");
@@ -74,8 +74,18 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.play_tournament)
     void playTournament() {
-        // TODO: prompt for tournament selection with proper filtering
-        startActivity(PlayTournamentActivity.newIntent(this, -1L));
+        List<Tournament> tournamentss = tournamentManager.getPlayableTournamentsForUser(playerManager.getCurrentLoggedInPlayer());
+        final TournamentAdapter tournamentAdapter = new TournamentAdapter(tournamentss);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Tournament");
+        builder.setSingleChoiceItems(tournamentAdapter, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                startActivity(PlayTournamentActivity.newIntent(MainActivity.this, tournamentAdapter.getItem(which).getId()));
+            }
+        });
+        builder.show();
     }
 
     @Override
@@ -116,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
     private class PuzzleAdapter extends ArrayAdapter<Puzzle> {
         public PuzzleAdapter(List<Puzzle> puzzles) {
             super(MainActivity.this, android.R.layout.simple_list_item_1, puzzles);
+        }
+    }
+
+    private class TournamentAdapter extends ArrayAdapter<Tournament> {
+        public TournamentAdapter(List<Tournament> tournaments) {
+            super(MainActivity.this, android.R.layout.simple_list_item_1, tournaments);
         }
     }
 }

@@ -71,6 +71,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
         super.onResume();
 
         updatePlayingBoard();
+        shouldWeExit();
     }
 
     private void updatePlayingBoard() {
@@ -99,6 +100,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
     @OnClick(R.id.guess)
     void guess() {
         puzzleRecord.guessConsonantForPrizeValue(guessesArrayAdapter.getItem(guesses.getSelectedItemPosition()), Integer.valueOf(prize.getText().toString()));
+        puzzleRecord.save();
         updatePlayingBoard();
 
         shouldWeExit();
@@ -107,6 +109,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
     @OnClick(R.id.buy)
     void buy() {
         puzzleRecord.buyVowel(vowelsArrayAdapter.getItem(vowels.getSelectedItemPosition()));
+        puzzleRecord.save();
         updatePlayingBoard();
 
         shouldWeExit();
@@ -132,6 +135,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
                             finish();
                         }
                     });
+            builder.setCancelable(false);
             builder.show();
         }else if (puzzleRecord.isPuzzleSolved()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -144,6 +148,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
                             finish();
                         }
                     });
+            builder.setCancelable(false);
             builder.show();
         }
     }
@@ -162,6 +167,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
                         finish();
                     }
                 });
+        builder.setCancelable(false);
         builder.show();
     }
 

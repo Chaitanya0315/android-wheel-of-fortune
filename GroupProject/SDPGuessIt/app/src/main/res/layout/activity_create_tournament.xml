@@ -20,11 +20,44 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent">
 
-    </android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="@dimen/field_width"
+                android:layout_height="wrap_content"
+                android:hint="Name" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_space" />
+
+            <Button
+                android:id="@+id/select_puzzles"
+                android:layout_width="@dimen/field_width"
+                android:layout_height="wrap_content"
+                android:text="Select Puzzles" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_space" />
+
+            <Button
+                android:id="@+id/add_tournament"
+                android:layout_width="@dimen/field_width"
+                android:layout_height="wrap_content"
+                android:text="Add Tournament" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

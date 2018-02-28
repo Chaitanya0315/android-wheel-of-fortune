@@ -1,31 +1,47 @@
 package edu.gatech.seclass.sdpguessit;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import edu.gatech.seclass.sdpguessit.data.managers.PlayerManager;
+import edu.gatech.seclass.sdpguessit.data.managers.PuzzleManager;
 import edu.gatech.seclass.sdpguessit.data.managers.TournamentManager;
+import edu.gatech.seclass.sdpguessit.data.models.Player;
+import edu.gatech.seclass.sdpguessit.data.models.Puzzle;
+import edu.gatech.seclass.sdpguessit.data.models.PuzzleRecord;
+import edu.gatech.seclass.sdpguessit.data.models.Tournament;
+import edu.gatech.seclass.sdpguessit.data.models.TournamentRecord;
 
 public class PlayTournamentActivity extends AppCompatActivity {
     private static final String EXTRA_ID = "extra:tournament_id";
 
+    @Inject PlayerManager playerManager;
+    @Inject PuzzleManager puzzleManager;
     @Inject TournamentManager tournamentManager;
 
     @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.name) TextView name;
+    @BindView(R.id.puzzlecontainer) LinearLayout puzzlecontainer;
 
     private Unbinder unbinder;
-    private Long id;
+    private Player player;
+    private Tournament tournament;
+    private TournamentRecord tournamentRecord;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,7 +53,55 @@ public class PlayTournamentActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        id = getIntent().getLongExtra(EXTRA_ID, -1L);
+        player = playerManager.getCurrentLoggedInPlayer();
+        tournament = tournamentManager.getTournament(getIntent().getLongExtra(EXTRA_ID, -1L));
+        tournamentRecord = tournamentManager.addNewTournamentRecord(player, tournament);
+
+        name.setText(tournament.getName());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        puzzlecontainer.removeAllViews();
+
+        boolean puzzleNotComplete = false;
+        for (Puzzle puzzle : tournament.getPuzzles()) {
+            PuzzleRecord puzzleRecord = puzzleManager.getPuzzleRecord(player, puzzle);
+
+            Button pzlBtn = new Button(this);
+            pzlBtn.setText(puzzle.toString() + (puzzleRecord != null ? "(Prize $" + puzzleRecord.getPrizeValue() + ")" : ""));
+            pzlBtn.setEnabled(puzzleRecord == null);
+            pzlBtn.setTag(puzzle.getId());
+            pzlBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(PlayPuzzleActivity.newIntent(PlayTournamentActivity.this, (Long) v.getTag()));
+                }
+            });
+
+            if (puzzleRecord == null) {
+                puzzleNotComplete = true;
+            }
+
+            puzzlecontainer.addView(pzlBtn);
+        }
+
+        if (!puzzleNotComplete) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Congrats! You Finished The Tournament!")
+                    .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            tournamentRecord.markComplete();
+                            tournamentRecord.save();
+                            finish();
+                        }
+                    });
+            builder.setCancelable(false);
+            builder.show();
+        }
     }
 
     @Override

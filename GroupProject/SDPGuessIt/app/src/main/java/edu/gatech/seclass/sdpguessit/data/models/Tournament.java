@@ -2,24 +2,39 @@ package edu.gatech.seclass.sdpguessit.data.models;
 
 import com.orm.SugarRecord;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tournament extends SugarRecord<Tournament> {
     Player player;
     String name;
-    List<Puzzle> puzzles;
+    String puzzlesCSV;
 
     public Tournament() {
     }
 
-    public Tournament(Player player, String name, List<Puzzle> puzzles) {
+    public Tournament(Player player, String name, String puzzlesCSV) {
         this.player = player;
         this.name = name;
-        this.puzzles = puzzles;
+        this.puzzlesCSV = puzzlesCSV;
     }
 
     @Override
     public String toString() {
         return name + " (" + player.userName + ")";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Puzzle> getPuzzles() {
+        List<Puzzle> puzzles = new ArrayList<>();
+        for(String id : StringUtils.split(puzzlesCSV, ',')){
+            puzzles.add(Puzzle.findById(Puzzle.class, Long.valueOf(id)));
+        }
+        return puzzles;
     }
 }
