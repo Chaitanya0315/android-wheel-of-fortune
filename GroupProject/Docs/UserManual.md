@@ -6,7 +6,7 @@
 ---
 1.0 General Overview
 2.0 Getting Started
-	2.1 Installing the GuessIt App
+<t\ >2.1 Installing the GuessIt App
 	2.2 System Menu
 	2.3 Exiting the GuessIt App
 3.0 Using the System
