@@ -3,6 +3,7 @@
 **Author**: Team11
 
 ## Table of Contents
+
 ---
 1.0 General Overview<br />
 2.0 Getting Started<br />
