@@ -4,7 +4,9 @@
 
 # Table of Contents
 ---
-1.0 General Overview<br />
+
+1.0 General Overview
+
 2.0 Getting Started<br />
 ⋅⋅⋅2.1 Installing the GuessIt App<br />
 ⋅⋅⋅2.2 System Menu<br />
