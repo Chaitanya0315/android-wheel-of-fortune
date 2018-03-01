@@ -32,9 +32,10 @@ TODO - Need Robert's help in filling this in.
 
 ## 1.3 Help and Support
 If any issues in running the GuessIt application are found, please contact Team11 through the following means:
-| Name | Contact Email | 
-| ------ | ------ |
-| Brigit Hawley | bhawley3@gatech.edu |
+
+| Contact Name  | Email              |
+| ------------- |-------------------:| 
+| Brigit Hawley | bhawley@gatech.edu |
 
 ## 2.0 Getting Started
 
