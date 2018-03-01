@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -127,6 +126,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
         if (puzzleRecord.isOutOfGuesses()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Sorry You Lose")
+                    .setMessage("Solution: " + puzzle.getPhrase())
                     .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -137,7 +137,7 @@ public class PlayPuzzleActivity extends AppCompatActivity {
                     });
             builder.setCancelable(false);
             builder.show();
-        }else if (puzzleRecord.isPuzzleSolved()) {
+        }else if (puzzleRecord.isComplete()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Congrats! You Win!")
                     .setMessage("Title Prize " + puzzleRecord.getPrizeValue() + "!!")

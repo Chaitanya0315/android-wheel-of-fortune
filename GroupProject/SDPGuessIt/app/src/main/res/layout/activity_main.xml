@@ -66,6 +66,16 @@
                 android:layout_height="wrap_content"
                 android:text="Play Tournamet"/>
 
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/field_space" />
+
+            <Button
+                android:id="@+id/continue_tournament"
+                android:layout_width="@dimen/field_width"
+                android:layout_height="wrap_content"
+                android:text="Continue Tournamet"/>
+
         </LinearLayout>
 
     </RelativeLayout>

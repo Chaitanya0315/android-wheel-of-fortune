@@ -53,8 +53,8 @@ public class CreatePuzzleActivity extends AppCompatActivity {
             Snackbar.make(v, "Sorry the Phrase cannot be empty", Snackbar.LENGTH_LONG)
                     .setAction("Dismiss", null).show();
         } else {
-            puzzleManager.createNewPuzzle(player, maxGuesses, mPhrase);
-            Toast.makeText(this, "Puzzle Added!", Toast.LENGTH_SHORT).show();
+            Long id = puzzleManager.createNewPuzzle(player, maxGuesses, mPhrase);
+            Toast.makeText(this, "Puzzle Added! (" + id + ")", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

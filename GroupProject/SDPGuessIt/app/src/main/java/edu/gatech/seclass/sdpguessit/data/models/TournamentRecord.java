@@ -32,4 +32,8 @@ public class TournamentRecord extends SugarRecord<TournamentRecord> {
     public void markComplete(){
         isComplete = true;
     }
+
+    public boolean isComplete() {
+        return isComplete;
+    }
 }

@@ -22,8 +22,39 @@ public class PuzzleManager {
     }
 
     public List<Puzzle> getPlayablePuzzlesForUser(Player player){
-        // TODO: implement proper filtering using player
-        return  getPuzzles();
+        List<Puzzle> puzzles = getPuzzles();
+        List<Puzzle> filtered = new ArrayList<>();
+
+        for(Puzzle puzzle : puzzles){
+            if(puzzle.getPlayer().getId() != player.getId()){
+                PuzzleRecord puzzleRecord = getPuzzleRecord(player, puzzle);
+
+                if(puzzleRecord == null || !puzzleRecord.isComplete()){
+                    filtered.add(puzzle);
+                }
+            }
+        }
+
+        return filtered;
+    }
+
+    public List<Puzzle> getCreatedOrCompltedPuzzlesForUser(Player player){
+        List<Puzzle> puzzles = getPuzzles();
+        List<Puzzle> filtered = new ArrayList<>();
+
+        for(Puzzle puzzle : puzzles){
+            if(puzzle.getPlayer().getId() == player.getId()){
+                filtered.add(puzzle);
+            }else{
+                PuzzleRecord puzzleRecord = getPuzzleRecord(player, puzzle);
+
+                if(puzzleRecord != null && puzzleRecord.isComplete()){
+                    filtered.add(puzzle);
+                }
+            }
+        }
+
+        return filtered;
     }
 
     public List<PuzzleRecord> getPuzzleRecords() {
@@ -45,7 +76,6 @@ public class PuzzleManager {
 
         if(puzzleRecord == null) {
             puzzleRecord = new PuzzleRecord(player, puzzle, 0, "", puzzle.getMaxGuesses(), false);
-            puzzleRecord.save();
         }
 
         return puzzleRecord;

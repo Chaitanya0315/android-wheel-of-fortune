@@ -28,4 +28,8 @@ public class Puzzle extends SugarRecord<Puzzle> {
     public int getMaxGuesses(){
         return maxGuesses;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
 }

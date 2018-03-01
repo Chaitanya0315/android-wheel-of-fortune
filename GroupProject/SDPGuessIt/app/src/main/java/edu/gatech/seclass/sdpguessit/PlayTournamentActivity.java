@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -42,6 +45,7 @@ public class PlayTournamentActivity extends AppCompatActivity {
     private Player player;
     private Tournament tournament;
     private TournamentRecord tournamentRecord;
+    boolean continuetournament = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,9 +59,16 @@ public class PlayTournamentActivity extends AppCompatActivity {
 
         player = playerManager.getCurrentLoggedInPlayer();
         tournament = tournamentManager.getTournament(getIntent().getLongExtra(EXTRA_ID, -1L));
-        tournamentRecord = tournamentManager.addNewTournamentRecord(player, tournament);
+        tournamentRecord = tournamentManager.getTournamentRecord(player, tournament);
+
+        if(tournamentRecord == null){
+            tournamentRecord = tournamentManager.addNewTournamentRecord(player, tournament);
+        }else{
+            continuetournament = true;
+        }
 
         name.setText(tournament.getName());
+        tournamentRecord.save();
     }
 
     @Override
@@ -65,6 +76,8 @@ public class PlayTournamentActivity extends AppCompatActivity {
         super.onResume();
 
         puzzlecontainer.removeAllViews();
+
+        List<View> btns = new ArrayList<>(tournament.getPuzzles().size());
 
         boolean puzzleNotComplete = false;
         for (Puzzle puzzle : tournament.getPuzzles()) {
@@ -85,6 +98,7 @@ public class PlayTournamentActivity extends AppCompatActivity {
                 puzzleNotComplete = true;
             }
 
+            btns.add(pzlBtn);
             puzzlecontainer.addView(pzlBtn);
         }
 
@@ -101,6 +115,17 @@ public class PlayTournamentActivity extends AppCompatActivity {
                     });
             builder.setCancelable(false);
             builder.show();
+        }else{
+            if(continuetournament){
+                continuetournament = false;
+
+                for(View btn: btns){
+                    if(btn.isEnabled()){
+                        btn.performClick();
+                        break;
+                    }
+                }
+            }
         }
     }
 

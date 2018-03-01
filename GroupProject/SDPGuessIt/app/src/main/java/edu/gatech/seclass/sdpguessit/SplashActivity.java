@@ -70,13 +70,25 @@ public class SplashActivity extends AppCompatActivity {
             Tournament rojoiiiT2 = new Tournament(rojoiii, "rojoiiiT2", player1P2.getId() + "," + player2P2.getId()); rojoiiiT2.save();
             Tournament rojoiiiT3 = new Tournament(rojoiii, "rojoiiiT3", player1P3.getId() + "," + player2P3.getId()); rojoiiiT3.save();
 
+            Tournament rojoiiiT4 = new Tournament(rojoiii, "rojoiiiT5", rojoiiiP1.getId().toString()); rojoiiiT4.save();
+            Tournament rojoiiiT5 = new Tournament(rojoiii, "rojoiiiT6", player1P1.getId().toString()); rojoiiiT5.save();
+            Tournament rojoiiiT6 = new Tournament(rojoiii, "rojoiiiT7", player2P1.getId().toString()); rojoiiiT6.save();
+
             Tournament player1T1 = new Tournament(player1, "player1T1", rojoiiiP1.getId() + "," + player2P1.getId()); player1T1.save();
             Tournament player1T2 = new Tournament(player1, "player1T2", rojoiiiP2.getId() + "," + player2P2.getId()); player1T2.save();
             Tournament player1T3 = new Tournament(player1, "player1T3", rojoiiiP3.getId() + "," + player2P3.getId()); player1T3.save();
 
+            Tournament player1T4 = new Tournament(player1, "player1T5", rojoiiiP1.getId().toString()); player1T4.save();
+            Tournament player1T5 = new Tournament(player1, "player1T6", player1P1.getId().toString()); player1T5.save();
+            Tournament player1T6 = new Tournament(player1, "player1T7", player2P1.getId().toString()); player1T6.save();
+
             Tournament player2T1 = new Tournament(player2, "player2T1", player1P1.getId() + "," + rojoiiiP1.getId()); player2T1.save();
             Tournament player2T2 = new Tournament(player2, "player2T2", player1P2.getId() + "," + rojoiiiP2.getId()); player2T2.save();
             Tournament player2T3 = new Tournament(player2, "player2T3", player1P3.getId() + "," + rojoiiiP3.getId()); player2T3.save();
+
+            Tournament player2T4 = new Tournament(player2, "player2T5", rojoiiiP1.getId().toString()); player2T4.save();
+            Tournament player2T5 = new Tournament(player2, "player2T6", player1P1.getId().toString()); player2T5.save();
+            Tournament player2T6 = new Tournament(player2, "player2T7", player2P1.getId().toString()); player2T6.save();
         }
 
     }

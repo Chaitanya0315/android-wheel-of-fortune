@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.inject.Inject;
 
@@ -58,10 +59,17 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.play_puzzle)
     void playPuzzle() {
-        List<Puzzle> puzzles = puzzleManager.getPlayablePuzzlesForUser(playerManager.getCurrentLoggedInPlayer());
+        final List<Puzzle> puzzles = puzzleManager.getPlayablePuzzlesForUser(playerManager.getCurrentLoggedInPlayer());
         final PuzzleAdapter puzzleAdapter = new PuzzleAdapter(puzzles);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Select Puzzle");
+        builder.setPositiveButton("Random", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(PlayPuzzleActivity.newIntent(MainActivity.this, puzzles.get(new Random().nextInt(((puzzles.size() - 1) - 0) + 1) + 0).getId()));
+            }
+        });
+        builder.setNegativeButton("Cancel", null);
         builder.setSingleChoiceItems(puzzleAdapter, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -69,15 +77,32 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(PlayPuzzleActivity.newIntent(MainActivity.this, puzzleAdapter.getItem(which).getId()));
             }
         });
+        builder.setCancelable(false);
         builder.show();
     }
 
     @OnClick(R.id.play_tournament)
     void playTournament() {
-        List<Tournament> tournamentss = tournamentManager.getPlayableTournamentsForUser(playerManager.getCurrentLoggedInPlayer());
+        List<Tournament> tournamentss = tournamentManager.getPlayableTournamentsForUser(playerManager.getCurrentLoggedInPlayer(), TournamentManager.Filter.not_played_yet);
         final TournamentAdapter tournamentAdapter = new TournamentAdapter(tournamentss);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Select Tournament");
+        builder.setTitle("Select Tournament to Play");
+        builder.setSingleChoiceItems(tournamentAdapter, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                startActivity(PlayTournamentActivity.newIntent(MainActivity.this, tournamentAdapter.getItem(which).getId()));
+            }
+        });
+        builder.show();
+    }
+
+    @OnClick(R.id.continue_tournament)
+    void continueTournament() {
+        List<Tournament> tournamentss = tournamentManager.getPlayableTournamentsForUser(playerManager.getCurrentLoggedInPlayer(), TournamentManager.Filter.played);
+        final TournamentAdapter tournamentAdapter = new TournamentAdapter(tournamentss);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select Tournament to Continue");
         builder.setSingleChoiceItems(tournamentAdapter, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

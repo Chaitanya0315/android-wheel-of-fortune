@@ -44,6 +44,7 @@ public class CreateTournamentActivity extends AppCompatActivity {
     private Unbinder unbinder;
     private List<Puzzle> puzzles;
     private List<Puzzle> selectedPuzzles;
+    private Player player;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,8 @@ public class CreateTournamentActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         selectedPuzzles = new ArrayList<>();
-        puzzles = puzzleManager.getPlayablePuzzlesForUser(playerManager.getCurrentLoggedInPlayer());
+        player = playerManager.getCurrentLoggedInPlayer();
+        puzzles = puzzleManager.getCreatedOrCompltedPuzzlesForUser(player);
     }
 
     private CharSequence[] buildCharSequenceArrayFromPuzzleList(List<Puzzle> puzzles) {
@@ -101,14 +103,13 @@ public class CreateTournamentActivity extends AppCompatActivity {
     @OnClick(R.id.add_tournament)
     void addTournament(View v) {
         String mName = name.getText().toString();
-        Player player = playerManager.getCurrentLoggedInPlayer();
 
         if (TextUtils.isEmpty(mName) || selectedPuzzles.isEmpty()) {
             Snackbar.make(v, "Sorry the name cannot be empty", Snackbar.LENGTH_LONG)
                     .setAction("Dismiss", null).show();
         } else {
-            tournamentManager.createNewTournament(player, mName, selectedPuzzles);
-            Toast.makeText(this, "Tournament Added!", Toast.LENGTH_SHORT).show();
+            Long id = tournamentManager.createNewTournament(player, mName, selectedPuzzles);
+            Toast.makeText(this, "Tournament Added! (" + id + ")", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

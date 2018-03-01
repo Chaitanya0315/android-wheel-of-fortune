@@ -37,4 +37,8 @@ public class Tournament extends SugarRecord<Tournament> {
         }
         return puzzles;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
 }
