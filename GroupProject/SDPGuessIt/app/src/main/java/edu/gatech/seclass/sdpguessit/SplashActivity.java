@@ -60,7 +60,7 @@ public class SplashActivity extends AppCompatActivity {
             Puzzle player1P3 = new Puzzle(player1, "player1P3", 6); player1P3.save();
             
             
-            Player player2 = new Player("player2F", "player2L", "player2i", "player2E"); player2.save();
+            Player player2 = new Player("player2F", "player2L", "player2", "player2E"); player2.save();
             Puzzle player2P1 = new Puzzle(player2, "player2P1", 2); player2P1.save();
             Puzzle player2P2 = new Puzzle(player2, "player2P2", 4); player2P2.save();
             Puzzle player2P3 = new Puzzle(player2, "player2P3", 6); player2P3.save();

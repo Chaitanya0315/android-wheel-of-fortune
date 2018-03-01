@@ -113,6 +113,26 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    @OnClick(R.id.player_puzzle_stats)
+    void playerPuzzleStats() {
+        startActivity(PlayerPuzzleStatsActivity.newIntent(this));
+    }
+
+    @OnClick(R.id.player_tournament_stats)
+    void playerTournamentStats() {
+        startActivity(PlayerTournamentStatsActivity.newIntent(this));
+    }
+
+    @OnClick(R.id.puzzle_stats)
+    void puzzleStats() {
+        startActivity(PuzzleStatsActivity.newIntent(this));
+    }
+
+    @OnClick(R.id.tournament_stats)
+    void tournamentStats() {
+        startActivity(TournamentStatsActivity.newIntent(this));
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);

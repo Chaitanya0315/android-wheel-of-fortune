@@ -55,6 +55,24 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
 
+        <activity
+            android:name=".PlayerPuzzleStatsActivity"
+            android:label="@string/title_activity_player_puzzle_stats"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PlayerTournamentStatsActivity"
+            android:label="@string/title_activity_player_tournament_stats"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".PuzzleStatsActivity"
+            android:label="@string/title_activity_puzzle_stats"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TournamentStatsActivity"
+            android:label="@string/title_activity_tournament_stats"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <meta-data
             android:name="DATABASE"
             android:value="guess_it.db" />
@@ -67,6 +85,8 @@
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="edu.gatech.seclass.sdpguessit.data.models" />
+
+
     </application>
 
 </manifest>

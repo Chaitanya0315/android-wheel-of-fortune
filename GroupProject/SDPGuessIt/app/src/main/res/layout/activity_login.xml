@@ -34,7 +34,7 @@
                 android:id="@+id/username"
                 android:layout_width="@dimen/field_width"
                 android:layout_height="wrap_content"
-                android:hint="Username"/>
+                android:hint="Username" />
 
             <android.support.v4.widget.Space
                 android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:id="@+id/login"
                 android:layout_width="@dimen/field_width"
                 android:layout_height="wrap_content"
-                android:text="Login"/>
+                android:text="Login" />
 
             <android.support.v4.widget.Space
                 android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                 android:id="@+id/create_player"
                 android:layout_width="@dimen/field_width"
                 android:layout_height="wrap_content"
-                android:text="Create Player"/>
+                android:text="Create Player" />
 
         </LinearLayout>
 

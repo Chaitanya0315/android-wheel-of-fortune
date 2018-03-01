@@ -6,6 +6,8 @@ import java.util.List;
 import edu.gatech.seclass.sdpguessit.data.models.Player;
 import edu.gatech.seclass.sdpguessit.data.models.Puzzle;
 import edu.gatech.seclass.sdpguessit.data.models.PuzzleRecord;
+import edu.gatech.seclass.sdpguessit.data.models.Tournament;
+import edu.gatech.seclass.sdpguessit.data.models.TournamentRecord;
 
 public class PuzzleManager {
     public PuzzleManager() {
@@ -59,6 +61,30 @@ public class PuzzleManager {
 
     public List<PuzzleRecord> getPuzzleRecords() {
         return PuzzleRecord.listAll(PuzzleRecord.class);
+    }
+
+    public List<PuzzleRecord> getPuzzleRecordsForPlayer(Player player) {
+        List<PuzzleRecord> puzzleRecords = new ArrayList<>();
+
+        for(PuzzleRecord puzzleRecord : getPuzzleRecords()){
+            if(puzzleRecord.getPlayer().getId() == player.getId()){
+                puzzleRecords.add(puzzleRecord);
+            }
+        }
+
+        return puzzleRecords;
+    }
+
+    public List<PuzzleRecord> getPuzzleRecordsForPuzzle(Puzzle puzzle) {
+        List<PuzzleRecord> puzzleRecords = new ArrayList<>();
+
+        for(PuzzleRecord puzzleRecord : getPuzzleRecords()){
+            if(puzzleRecord.getPuzzle().getId() == puzzle.getId()){
+                puzzleRecords.add(puzzleRecord);
+            }
+        }
+
+        return puzzleRecords;
     }
 
     public Puzzle getPuzzle(long id) {

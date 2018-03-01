@@ -10,7 +10,10 @@ import edu.gatech.seclass.sdpguessit.LoginActivity;
 import edu.gatech.seclass.sdpguessit.MainActivity;
 import edu.gatech.seclass.sdpguessit.PlayPuzzleActivity;
 import edu.gatech.seclass.sdpguessit.PlayTournamentActivity;
+import edu.gatech.seclass.sdpguessit.PlayerPuzzleStatsActivity;
+import edu.gatech.seclass.sdpguessit.PlayerTournamentStatsActivity;
 import edu.gatech.seclass.sdpguessit.SplashActivity;
+import edu.gatech.seclass.sdpguessit.StatsActivity;
 
 @Singleton
 @Component(modules = {AppModule.class})
@@ -30,4 +33,6 @@ public interface AppComponent {
     void inject(PlayPuzzleActivity playPuzzleActivity);
 
     void inject(PlayTournamentActivity tournamentActivity);
+
+    void inject(StatsActivity statsActivity);
 }

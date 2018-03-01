@@ -36,10 +36,9 @@ public class TournamentManager {
     }
 
     public List<Tournament> getPlayableTournamentsForUser(Player player, TournamentManager.Filter filter) {
-        List<Tournament> tournaments = getTournaments();
         List<Tournament> filtered = new ArrayList<>();
 
-        for (Tournament tournament : tournaments) {
+        for (Tournament tournament : getTournaments()) {
             if (tournament.getPlayer().getId() != player.getId()) {
                 TournamentRecord tournamentRecord = getTournamentRecord(player, tournament);
                 if (tournamentRecord == null || !tournamentRecord.isComplete()) {
@@ -78,6 +77,30 @@ public class TournamentManager {
 
     public List<TournamentRecord> getTournamentRecords() {
         return TournamentRecord.listAll(TournamentRecord.class);
+    }
+
+    public List<TournamentRecord> getTournamentRecordsForPlayer(Player player) {
+        List<TournamentRecord> tournamentRecords = new ArrayList<>();
+
+        for(TournamentRecord tournamentRecord : getTournamentRecords()){
+            if(tournamentRecord.getPlayer().getId() == player.getId()){
+                tournamentRecords.add(tournamentRecord);
+            }
+        }
+
+        return tournamentRecords;
+    }
+
+    public List<TournamentRecord> getTournamentRecordsForTournament(Tournament tournament) {
+        List<TournamentRecord> tournamentRecords = new ArrayList<>();
+
+        for(TournamentRecord tournamentRecord : getTournamentRecords()){
+            if(tournamentRecord.getTournament().getId() == tournament.getId()){
+                tournamentRecords.add(tournamentRecord);
+            }
+        }
+
+        return tournamentRecords;
     }
 
     public Tournament getTournament(long id) {

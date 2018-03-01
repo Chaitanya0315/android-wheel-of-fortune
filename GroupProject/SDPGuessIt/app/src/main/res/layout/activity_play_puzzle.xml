@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Current Prize:"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd" />
 
                 <android.support.v4.widget.Space
                     android:layout_width="15dp"
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="000"
-                    android:textAlignment="viewStart"/>
+                    android:textAlignment="viewStart" />
             </LinearLayout>
 
             <LinearLayout
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Total Prize:"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd" />
 
                 <android.support.v4.widget.Space
                     android:layout_width="15dp"
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="000"
-                    android:textAlignment="viewStart"/>
+                    android:textAlignment="viewStart" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Remaining Guesses:"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd" />
 
                 <android.support.v4.widget.Space
                     android:layout_width="15dp"
@@ -115,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="000"
-                    android:textAlignment="viewStart"/>
+                    android:textAlignment="viewStart" />
             </LinearLayout>
 
         </LinearLayout>
@@ -136,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical" />
 
                 <android.support.v4.widget.Space
                     android:layout_width="15dp"
@@ -147,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Guess"/>
+                    android:text="Guess" />
             </LinearLayout>
 
             <android.support.v4.widget.Space
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical" />
 
                 <android.support.v4.widget.Space
                     android:layout_width="15dp"
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Buy"/>
+                    android:text="Buy" />
             </LinearLayout>
 
             <EditText
@@ -183,14 +183,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Solve Puzzle"
-                android:textAlignment="center"/>
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/solve"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Solve"/>
+                android:text="Solve" />
 
         </LinearLayout>
 

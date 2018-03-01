@@ -86,7 +86,7 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
     }
 
     public List<Character> getGuessedLetters(){
-        String[] guessedLettersArray = StringUtils.split(guessedLettersCSV, '.');
+        String[] guessedLettersArray = StringUtils.split(guessedLettersCSV, ',');
         List<Character> guessedLetters = new ArrayList<>(guessedLettersArray.length);
 
         for(String guessedLetter : guessedLettersArray){
@@ -97,7 +97,7 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
     }
 
     public void guessConsonantForPrizeValue(Character character, int prizeValue) {
-        guessedLettersCSV += ',' + Character.toUpperCase(character);
+        guessedLettersCSV += "," + Character.toUpperCase(character);
 
         List<Character> upperCasePhrase = phraseToUpperCharacterList();
         Character upperCharacter = Character.toUpperCase(character);
@@ -114,7 +114,7 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
     }
 
     public void buyVowel(Character character){
-        guessedLettersCSV += ',' + Character.toUpperCase(character);
+        guessedLettersCSV += "," + Character.toUpperCase(character);
 
         List<Character> upperCasePhrase = phraseToUpperCharacterList();
 

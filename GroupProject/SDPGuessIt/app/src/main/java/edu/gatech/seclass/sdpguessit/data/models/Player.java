@@ -17,4 +17,8 @@ public class Player extends SugarRecord<Player> {
         this.userName = userName;
         this.email = email;
     }
+
+    public String getUserName() {
+        return userName;
+    }
 }

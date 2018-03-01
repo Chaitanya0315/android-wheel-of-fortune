@@ -23,7 +23,7 @@ public class Tournament extends SugarRecord<Tournament> {
 
     @Override
     public String toString() {
-        return name + " (" + player.userName + ")";
+        return name;
     }
 
     public String getName() {
