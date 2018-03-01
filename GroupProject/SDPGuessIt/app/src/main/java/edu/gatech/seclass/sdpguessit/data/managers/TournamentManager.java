@@ -42,15 +42,15 @@ public class TournamentManager {
             if (tournament.getPlayer().getId() != player.getId()) {
                 TournamentRecord tournamentRecord = getTournamentRecord(player, tournament);
                 if (tournamentRecord == null || !tournamentRecord.isComplete()) {
-                    boolean ownedPuzsle = false;
+                    boolean ownedPuzzle = false;
                     for (Puzzle puzzle : tournament.getPuzzles()) {
                         if (puzzle.getPlayer().getId() == player.getId()) {
-                            ownedPuzsle = true;
+                            ownedPuzzle = true;
                             break;
                         }
                     }
 
-                    if (!ownedPuzsle) {
+                    if (!ownedPuzzle) {
                         switch(filter){
                             default:
                             case none:

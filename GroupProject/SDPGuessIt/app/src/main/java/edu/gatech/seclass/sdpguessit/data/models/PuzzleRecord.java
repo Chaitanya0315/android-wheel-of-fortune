@@ -118,9 +118,8 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
 
         List<Character> upperCasePhrase = phraseToUpperCharacterList();
 
+        this.prizeValue -= 300 ;
         if (upperCasePhrase.contains(Character.toUpperCase(character))) {
-            this.prizeValue -= 300 ;
-
             if(TextUtils.equals(getPuzzlePhrase(), puzzle.phrase.toUpperCase())){
                 isComplete = true;
             }
