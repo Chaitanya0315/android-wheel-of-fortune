@@ -17,10 +17,6 @@
 ⋅⋅⋅3.4 Creating a Tournament<br />
 ⋅⋅⋅3.5 Playing a Tournament<br />
 ⋅⋅⋅3.6 Viewing Statistics<br />
-⋅⋅⋅⋅⋅⋅3.6.1 Puzzles per Player<br />
-⋅⋅⋅⋅⋅⋅3.6.2 Tournaments per Player<br />
-⋅⋅⋅⋅⋅⋅3.6.3 Per Puzzle<br />
-⋅⋅⋅⋅⋅⋅3.6.4 Per Tournament<br />
 
 ## 1.0 - General Overview
 The 'GuessIt' Android Application is a game application simulating the popular 'Wheel of Fortune' television show. More in depth usages of the application will be covered in the following document.
