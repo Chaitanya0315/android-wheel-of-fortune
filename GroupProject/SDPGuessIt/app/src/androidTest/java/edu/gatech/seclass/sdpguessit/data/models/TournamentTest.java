@@ -13,6 +13,8 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.orm.SugarRecord;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,21 +32,24 @@ public class TournamentTest{
     PlayerManager playerM;
 
     public TournamentTest() {
+        playerM = new PlayerManager(InstrumentationRegistry.getTargetContext());
+        tournamentM = new TournamentManager();
+        puzzleM = new PuzzleManager();
     }
 
     @Before
     public void setUp() {
-        playerM = new PlayerManager(InstrumentationRegistry.getTargetContext());
-        tournamentM = new TournamentManager();
-        puzzleM = new PuzzleManager();
+
 
     }
 
     @After
     public void tearDown() {
-        tournamentM = null;
-        puzzleM = null;
-        playerM = null;
+        SugarRecord.deleteAll(Player.class);
+        SugarRecord.deleteAll(Puzzle.class);
+        SugarRecord.deleteAll(Tournament.class);
+        SugarRecord.deleteAll(PuzzleRecord.class);
+        SugarRecord.deleteAll(TournamentRecord.class);
     }
 
     @Test
@@ -53,19 +58,14 @@ public class TournamentTest{
         playerM.addNewPlayer("Tom", "Bush", "TomB", "TomB@gmail.com");
         Player player = playerM.getPlayerByUsername("TomB");
 
-        Long puzzleID1 = puzzleM.createNewPuzzle(player,8,"Clalifornia");
-        Long puzzleID2 = puzzleM.createNewPuzzle(player,8,"New Jersey");
-        Long puzzleID3 = puzzleM.createNewPuzzle(player,8,"New York");
-        Long puzzleID4 = puzzleM.createNewPuzzle(player,8,"Florida");
-        Long puzzleID5 = puzzleM.createNewPuzzle(player,8,"Georgia");
-        Long puzzleID6 = puzzleM.createNewPuzzle(player,8,"Seattle");
+        puzzleM.createNewPuzzle(player,8,"Seattle");
 
         List<Puzzle> puzzleList = new ArrayList<>();
-        puzzleList.add(puzzleM.getPuzzle(puzzleID1));
-        puzzleList.add(puzzleM.getPuzzle(puzzleID2));
-        puzzleList.add(puzzleM.getPuzzle(puzzleID3));
-        puzzleList.add(puzzleM.getPuzzle(puzzleID4));
-        puzzleList.add(puzzleM.getPuzzle(puzzleID5));
+        puzzleList.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Clalifornia")));
+        puzzleList.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"New Jersey")));
+        puzzleList.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"New York")));
+        puzzleList.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Florida")));
+        puzzleList.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Georgia")));
 
         Long id = tournamentM.createNewTournament(player,"States",puzzleList);
         assertEquals(tournamentM.getTournament(id).name,"States");
@@ -82,77 +82,83 @@ public class TournamentTest{
         playerM.addNewPlayer("Tom", "Bush", "TomB", "TomB@gmail.com");
         Player player = playerM.getPlayerByUsername("TomB");
 
-        Long puzzleID1 = puzzleM.createNewPuzzle(player,8,"United States of America");
-        Long puzzleID2 = puzzleM.createNewPuzzle(player,8,"United KingDom");
-        Long puzzleID3 = puzzleM.createNewPuzzle(player,8,"France");
-        Long puzzleID4 = puzzleM.createNewPuzzle(player,8,"Germany");
-        Long puzzleID5 = puzzleM.createNewPuzzle(player,8,"Japan");
-
-        Long puzzleID6 = puzzleM.createNewPuzzle(player,8,"China");
-        Long puzzleID7 = puzzleM.createNewPuzzle(player,8,"Australia");
-        Long puzzleID8 = puzzleM.createNewPuzzle(player,8,"Sri Lanka");
-        Long puzzleID9 = puzzleM.createNewPuzzle(player,8,"Canada");
-        Long puzzleID10 = puzzleM.createNewPuzzle(player,8,"New Zeland");
-
-
         List<Puzzle> puzzleListTournament1 = new ArrayList<>();
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID1));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID2));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID3));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID4));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID5));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"United States of America")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"United KingDom")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"France")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Germany")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Japan")));
 
         List<Puzzle> puzzleListTournament2 = new ArrayList<>();
-        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleID6));
-        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleID7));
-        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleID8));
-        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleID9));
-        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleID10));
+        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"China")));
+        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Australia")));
+        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Sri Lanka")));
+        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Canada")));
+        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"New Zeland")));
 
 
-       // Long idTournament1 = tournamentM.createNewTournament(player,"States",puzzleListTournament1);
-       // Long idTournament2 = tournamentM.createNewTournament(player,"States",puzzleListTournament2);
+       // Long idTournament1 = tournamentM.createNewTournament(player,"Countries",puzzleListTournament1);
+       // Long idTournament2 = tournamentM.createNewTournament(player,"Countries",puzzleListTournament2);
 
        // assertEquals(tournamentM.getTournament(idTournament1).name,tournamentM.getTournament(idTournament2).name);
     }
 
- /*   @Test
-    public void test() {
+    @Test
+    public void testIfnoTournamentsReturnedWhenNoOtherPlayerHasCreatedTournaments() {
 
         playerM.addNewPlayer("Tom", "Bush", "TomB", "TomB@gmail.com");
         Player player = playerM.getPlayerByUsername("TomB");
 
-        Long puzzleID1 = puzzleM.createNewPuzzle(player,8,"Georgia Tech");
-        Long puzzleID2 = puzzleM.createNewPuzzle(player,8,"Washington DC");
-        Long puzzleID3 = puzzleM.createNewPuzzle(player,8,"United States of America");
-        Long puzzleID4 = puzzleM.createNewPuzzle(player,8,"Florida");
-        Long puzzleID5 = puzzleM.createNewPuzzle(player,8,"Georgia");
-
-        Long puzzleID6 = puzzleM.createNewPuzzle(player,8,"Georgia Tech");
-        //Long puzzleID7 = puzzleM.createNewPuzzle(player,8,"Washington DC");
-        //Long puzzleID8 = puzzleM.createNewPuzzle(player,8,"United States of America");
-        //Long puzzleID9 = puzzleM.createNewPuzzle(player,8,"Florida");
-        //Long puzzleID10 = puzzleM.createNewPuzzle(player,8,"Georgia");
-
-
         List<Puzzle> puzzleListTournament1 = new ArrayList<>();
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID1));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID2));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID3));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID4));
-        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleID5));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"United States of America")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"United KingDom")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"France")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Germany")));
+        puzzleListTournament1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player,8,"Japan")));
+        Long idTournament1 = tournamentM.createNewTournament(player,"Countries",puzzleListTournament1);
 
-        List<Puzzle> puzzleListTournament2 = new ArrayList<>();
-        puzzleListTournament2.add(puzzleM.getPuzzle(puzzleID6));
+        tournamentM.createNewTournament(player,"Countries",puzzleListTournament1);
+        List<Tournament> playableTournaments = tournamentM.getPlayableTournamentsForUser(player,TournamentManager.Filter.not_played_yet);
+
+        assertEquals(playableTournaments.isEmpty(),true);
+
+    }
+
+    @Test
+    public void testIftheCorrectTournamentIsReturnedWhenOnlyOneExistValid() {
 
         playerM.addNewPlayer("Tom", "Bush", "TomB", "TomB@gmail.com");
-        Player player = playerM.getPlayerByUsername("Team11");
+        playerM.addNewPlayer("George","Allen","GAllen","gallen@gmail.com");
+
+        Player player1 = playerM.getPlayerByUsername("TomB");
+        Player player2 = playerM.getPlayerByUsername("GAllen");
+
+        List<Puzzle> puzzleListPlayer1 = new ArrayList<>();
+        puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"United States of America")));
+        puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"United KingDom")));
+        puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"France")));
+        puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"Germany")));
+        puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"Japan")));
+        Long idTournament1 = tournamentM.createNewTournament(player1,"Countries",puzzleListPlayer1);
+
+        List<Puzzle> puzzleListPlayer2 = new ArrayList<>();
+        puzzleListPlayer2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player2,8,"Clalifornia")));
+        puzzleListPlayer2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player2,8,"New Jersey")));
+        puzzleListPlayer2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player2,8,"New York")));
+        puzzleListPlayer2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player2,8,"Florida")));
+        puzzleListPlayer2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player2,8,"Georgia")));
+        tournamentM.createNewTournament(player2,"States",puzzleListPlayer2);
+        List<Tournament> playableTournaments = tournamentM.getPlayableTournamentsForUser(player2,TournamentManager.Filter.not_played_yet);
+
+        for(int i = 0;i<10;i++){
+            Tournament playableT = playableTournaments.get(0);
+            assertEquals(playableT.getName(),"Countries");
+            assertEquals(playableTournaments.size(),1);
+        }
 
 
-        Long idTournament1 = tournamentM.createNewTournament(player,"Tournamnet1_Player1",puzzleListTournament1);
-        Long idTournament2 = tournamentM.createNewTournament(player,"Tournamnet1_Player1",puzzleListTournament2);
-
-        assertEquals(tournamentM.getTournament(idTournament1).name,tournamentM.getTournament(idTournament2).name);
     }
-*/
+
+
+
 }
