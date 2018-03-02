@@ -39,7 +39,7 @@ Currently, the only planned testing technology is JUnit. If the project proves t
 
 Our Test Plan consists of both manual and automated Testing. Test cases will be developed as follows for each UseCase.
 
-#### * Manual Test Cases
+### * Manual Test Cases
 
 **Login UseCase**
 
@@ -65,20 +65,6 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 <br />
 <br />
 
-**Create Tournament UseCase**
-
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
-| ------ | ------ | ------ | ------ | ------ |
-| Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | --- | --- |
-| Test if the system will select a puzzle already played by the user as a direct play| create 2 puzzles; complete one puzzle; select play random puzzle 10 times | the puzzle already played shall not be selected| --- | --- |
-| Test if the system will select a puzzle already played by the user in a tournament| create a tournament with 5 puzzles and complete all of them; create 6th puzzle; select play random puzzle 10 times | the 6th puzzle shall always be selected| --- | --- |
-| Test if the system will select a puzzle created by the User| create 6 puzzles where only one of them by the tester; select create Tournament; repeat the test for few times |Tester/User should not see the Puzzle he/she created in each iteration| --- | --- |
-| Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | --- | --- |
-
-<br />
-<br />
-<br />
-
 **Solve Puzzle UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -89,6 +75,7 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 | Test if solve the puzzle function acts correctly| select solve a puzzle; make a guess | all remaining blanks has to be filled; correct guess will increase the prize value by $1000 for each letter not yet revealed; wrong guess will receive $0 for the puzzle; ends the game| --- | --- |
 | Test if the exit/continue functions for Puzzles act correctly| start a puzzle; select exit; select continue; select exit; select leave | confirmation window pops up when selecting exit for the first time; continue button available for user and takes user back to the game; return to the main menu when selecting exit again before clicking on the leave button on the confirmation window| --- | --- |
 | Test if an already played Puzzle is displayed to the User to play | Create muliple Puzzles fro the Tester's Player account; select solve Random Puzzle option | Tester should not see any Puzzle as a option to play| --- | --- |
+| Test if the system will select a puzzle already played by the user as a direct play| create 2 puzzles; complete one puzzle; select play random puzzle 10 times | the puzzle already played shall not be selected| --- | --- |
 
 <br />
 <br />
@@ -105,12 +92,25 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 <br />
 <br />
 
+
+**Create Tournament UseCase**
+
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | --- | --- |
+| Test if the system will select a puzzle already played by the user in a tournament| create a tournament with 5 puzzles and complete all of them; create 6th puzzle; select play random puzzle 10 times | the 6th puzzle shall always be selected| --- | --- |
+| Test if the system will select a puzzle created by the User| create 6 puzzles where only one of them by the tester; select create Tournament; repeat the test for few times |Tester/User should not see the Puzzle he/she created in each iteration| --- | --- |
+| Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | --- | --- |
+
+<br />
+<br />
+<br />
+
 **Play Tournament UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
-| Test if joining an invalid tournament is possible - Senario 1| Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament | tournament created by the 2nd user shall always be displayed| --- | --- |
-| Test if joining an invalid tournament is possible - Senario 2|Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again | the 3rd tournament shall always be displayed| --- | --- |
+| Test if joining an invalid tournament is possible|Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again | the 3rd tournament shall always be displayed| --- | --- |
 | Test the 'continue a tournament function'| Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again; 2nd user starts 3rd tournament; quit after completing the 1st puzzle; select join an existing tournament; create the 4th tournament | the 3rd tournament shall always be displayed| --- | --- |
 
 <br />
@@ -129,7 +129,7 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 <br />
 <br />
 
-#### * Automated Test Cases
+### * Automated Test Cases
 
 Automated Instrumentation Test Cases can be found in AndroidTest directory.
 
