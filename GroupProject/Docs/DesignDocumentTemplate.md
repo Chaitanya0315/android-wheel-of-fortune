@@ -21,7 +21,7 @@ Below are some issues that need to be kept in mind while completing this project
 ### 1.3 System Environment
 
 * To run this application, the user's device will have a minimum OS requirement of Jelly Bean (4.1 onward)
-* To run this application, the user's device will require a device with a minimum of 20 MB
+* To run this application, the user's device will require a device with a minimum of 5 MB
 
 ## 2 Architectural Design
 

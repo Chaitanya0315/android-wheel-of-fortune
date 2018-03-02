@@ -35,7 +35,7 @@ If any issues in running the GuessIt application are found, please contact Team1
 
 | Contact Name   | Email                  |
 | -------------- |-----------------------:| 
-| Brigit Hawley  | bhawley@gatech.edu     |
+| Brigit Hawley  | bhawley3@gatech.edu    |
 | Robert Johnson | rjohnson348@gatech.edu |
 | Sahan DeSilva  | rsilva32@gatech.edu    |
 | HaoHao Wang    | hwang404@gatech.edu    |
