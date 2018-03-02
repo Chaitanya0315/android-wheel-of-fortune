@@ -37,7 +37,9 @@ Currently, the only planned testing technology is JUnit. If the project proves t
 
 ## 2 Test Cases
 
-Test cases will be developed as follows for each subsection.
+Our Test Plan consists of both manual and automated Testing. Test cases will be developed as follows for each UseCase.
+
+#### * Manual Test Cases
 
 **Login UseCase**
 
@@ -123,4 +125,30 @@ Test cases will be developed as follows for each subsection.
 | Test if the Correct statistical data is tracked by the System| Complete all the Puzzles in a Tournament; return to main menu and select view stats | stats for the tournament should be correctly displayed| --- | --- |
 | Test if the existing Puzzle Prizes are counted when they appear in a Tournament selected to be played | Login as the Player 1, create 5 Puzzles and a Tournament which includes the 5 puzzles created; Logout and Login as Player 1; Select Solve Random puzzle and complete it; Then select Play Tournament; Play all the Puzzles to Complete the Tournament where the Puzzle already played should be completed with a Prize different from what earned when it was played alone; Selct Tournament's Prize Tab| Prize earned for the randome puzzle played is in the Tournament selected and should be counted into the tournament Prize even when that Puzzle is played again in the current Tournament| --- | --- |
 
+<br />
+<br />
+<br />
+
+#### * Automated Test Cases
+
+Automated Instrumentation Test Cases can be found in AndroidTest directory.
+
+**Create Tournament and Solve tournament UseCases**
+
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the Tournament Created is saved properly in the Database | Create 5 puzzles and 1st tournament; retrieve tournament name from the saved tournament list with the help of the Tournament ID| Successful retrival of the saved Tournament into the Database | Passed |
+|        Test if the playable Tournaments are none when no other Player has created Tournaments but the Player
+        intended to play the tournament has one tournament created. |create a Player; create 5 Puzzles and a Tournament using them; Then retrive the playable Tournaments by the player; 
+       | It should return an empty list | Passed |
+| Test the boundary condition what tournament returns when Two Tournaments exist and only one of them created by Player intended to play a Tournament |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; create 5 Puzzles and a Tournament using them;Logout player2; Login player1; Retrive the playable Tournaments; Repeate this test for 10 times
+       |  It should return the Tournament created by player1 in every iteration | Passed |
+| Test if the Tournament is playable even when that has one or more Puzzles which have already been completed by the Player. |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve a randomly selected Puzzle and complete it; Retrive the playable Tournaments;
+       |  It should return the Tournament created by player1 and the size of returned list should be 1 | Passed |
+| Test if the Tournaments completed are saved properly as completed ones in the database |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the TournamentRecords saved for player2 and tournament solved;
+       |  It should return the Tournament solved by player2 and the size of returned list should be 1 | Passed |
+| Test if the Tournaments completed are not playable for the same Player |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the Tournaments player2 can play further;
+       |  It should return an empty list of tournaments | Passed |
+       
+       
 [076fe412]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues "GitHub Issues"
