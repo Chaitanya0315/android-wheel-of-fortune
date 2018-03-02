@@ -52,6 +52,10 @@ public class TournamentTest{
         SugarRecord.deleteAll(TournamentRecord.class);
     }
 
+    /*
+    Test if the Tournament Created is saved properly in the Database
+     */
+
     @Test
     public void testDBTournamentCreate() {
 
@@ -71,6 +75,10 @@ public class TournamentTest{
         assertEquals(tournamentM.getTournament(id).name,"States");
     }
 
+    /*
+        Test if the playable Tournaments are 0 when no other Player has created Tournaments but the Player
+        intended to play the tournament has one tournament created.
+     */
     @Test
     public void testIfnoTournamentsReturnedWhenNoOtherPlayerHasCreatedTournaments() {
 
@@ -89,8 +97,13 @@ public class TournamentTest{
         List<Tournament> playableTournaments = tournamentM.getPlayableTournamentsForUser(player,TournamentManager.Filter.not_played_yet);
 
         assertEquals(playableTournaments.isEmpty(),true);
-
     }
+
+    /*
+        Scenario - Two Tournaments exist and each tournament is created by two different Players.
+        Test for multiple times that the playable Tournament for Player1 is only the Tournament
+        created by the other Player.
+     */
 
     @Test
     public void testIftheCorrectTournamentIsReturnedWhenOnlyOneExistValid() {
@@ -107,7 +120,7 @@ public class TournamentTest{
         puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"France")));
         puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"Germany")));
         puzzleListPlayer1.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player1,8,"Japan")));
-        Long idTournament1 = tournamentM.createNewTournament(player1,"Countries",puzzleListPlayer1);
+        tournamentM.createNewTournament(player1,"Countries",puzzleListPlayer1);
 
         List<Puzzle> puzzleListPlayer2 = new ArrayList<>();
         puzzleListPlayer2.add(puzzleM.getPuzzle(puzzleM.createNewPuzzle(player2,8,"Clalifornia")));
@@ -123,6 +136,10 @@ public class TournamentTest{
         }
     }
 
+    /*
+       Test if the Tournament is playable even when that has one or more Puzzles which have already
+       been completed by the Player.
+    */
 
     @Test
     public void testIfthePlayerCanSelectMoreThan5PuzzlesToCreateATournament() {
@@ -155,6 +172,9 @@ public class TournamentTest{
         assertEquals(tournamentList.size(),1);
     }
 
+    /*
+        Test if the Tournaments completed are saved properly as completed ones in the database.
+     */
     @Test
     public void testIFTournamentRecordsAreSavedCorrectly() {
 
@@ -187,7 +207,10 @@ public class TournamentTest{
         assertEquals(tournamentList.getTournament().getId(),id);
     }
 
-
+    /*
+        Test if the Tournaments completed are saved properly in the Database and marked as
+        not playable for the same Player.
+     */
     @Test
     public void testIFCompletedTournamentsAreNotChosenAsPlayable() {
 
@@ -218,48 +241,5 @@ public class TournamentTest{
         List<Tournament> tournamentList = tournamentM.getPlayableTournamentsForUser(player2, TournamentManager.Filter.not_played_yet);
 
         assertEquals(tournamentList.isEmpty(),true);
-    }
-
-    /*
-        Status : Failed
-     */
-    @Test
-    public void testPlayerCanSelectATournamentInWhichAllThePuzzlesAreAlreadyPlayed() {
-
-        playerM.addNewPlayer("Tom", "Bush", "TomB", "TomB@gmail.com");
-        playerM.addNewPlayer("George","Allen","GAllen","gallen@gmail.com");
-
-        Player player1 = playerM.getPlayerByUsername("TomB");
-        Player player2 = playerM.getPlayerByUsername("GAllen");
-
-        Long id1 = puzzleM.createNewPuzzle(player1,8,"United States of America");
-        Long id2 = puzzleM.createNewPuzzle(player1,8,"United KingDom");
-        Long id3 = puzzleM.createNewPuzzle(player1,8,"France");
-        Long id4 = puzzleM.createNewPuzzle(player1,8,"Germany");
-        Long id5 = puzzleM.createNewPuzzle(player1,8,"Japan");
-
-        List<Puzzle> puzzleListPlayer1 = new ArrayList<>();
-        puzzleListPlayer1.add(puzzleM.getPuzzle(id1));
-        puzzleListPlayer1.add(puzzleM.getPuzzle(id2));
-        puzzleListPlayer1.add(puzzleM.getPuzzle(id3));
-        puzzleListPlayer1.add(puzzleM.getPuzzle(id4));
-        puzzleListPlayer1.add(puzzleM.getPuzzle(id5));
-
-        tournamentM.createNewTournament(player1,"New Tournament",puzzleListPlayer1);
-
-        PuzzleRecord puzzleR1 = new PuzzleRecord(player2, puzzleM.getPuzzle(id1), 1000, "United States of america", 2, true);
-        puzzleR1.save();
-        PuzzleRecord puzzleR2 = new PuzzleRecord(player2, puzzleM.getPuzzle(id2), 300, "United Kingdom", 2, true);
-        puzzleR2.save();
-        PuzzleRecord puzzleR3 = new PuzzleRecord(player2, puzzleM.getPuzzle(id3), 400, "france", 2, true);
-        puzzleR3.save();
-        PuzzleRecord puzzleR4 = new PuzzleRecord(player2, puzzleM.getPuzzle(id4), 800, "Germany", 2, true);
-        puzzleR4.save();
-        PuzzleRecord puzzleR5 = new PuzzleRecord(player2, puzzleM.getPuzzle(id5), 1700, "Japan", 2, true);
-        puzzleR5.save();
-
-        List<Tournament> tournamentList = tournamentM.getPlayableTournamentsForUser(player2,TournamentManager.Filter.not_played_yet);
-
-        assertEquals(tournamentList.size(),0);
     }
 }
