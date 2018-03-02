@@ -133,16 +133,25 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 Automated Instrumentation Test Cases can be found in AndroidTest directory.
 
-**Create Tournament and Solve tournament UseCases**
+**Create Tournament UseCase and Databse subsystem**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
-| Test if the Tournament Created is saved properly in the Database | Create 5 puzzles and 1st tournament; retrieve tournament name from the saved tournament list with the help of the Tournament ID| Successful retrival of the saved Tournament into the Database | Successful retrival of the saved Tournament into the Database |Passed |
-| Test if the playable Tournaments are none when no other Player has created Tournaments but the Player intended to play the tournament has one tournament created. |create a Player; create 5 Puzzles and a Tournament using them; Then retrive the playable Tournaments by the player; | It should return an empty list | It should return an empty list |Passed |
-| Test the boundary condition what tournament returns when Two Tournaments exist and only one of them created by Player intended to play a Tournament |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; create 5 Puzzles and a Tournament using them;Logout player2; Login player1; Retrive the playable Tournaments; Repeate this test for 10 times|  It should return the Tournament created by player1 in every iteration |  It should return the Tournament created by player1 in every iteration | Passed |
-| Test if the Tournament is playable even when that has one or more Puzzles which have already been completed by the Player. |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve a randomly selected Puzzle and complete it; Retrive the playable Tournaments;|  It should return the Tournament created by player1 and the size of returned list should be 1 |  It should return the Tournament created by player1 and the size of returned list should be 1 | Passed |
-| Test if the Tournaments completed are saved properly as completed ones in the database |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the TournamentRecords saved for player2 and tournament solved|  It should return the Tournament solved by player2 and the size of returned list should be 1 |  It should return the Tournament solved by player2 and the size of returned list should be 1 |  Passed |
-| Test if the Tournaments completed are not playable for the same Player |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the Tournaments player2 can play further|  It should return an empty list of tournaments |  It should return an empty list of tournaments | Passed |
+| Test if the Tournament Created is saved properly in the Database | Create 5 puzzles and 1st tournament; retrieve tournament name from the saved tournament list with the help of the Tournament ID| Successful retrival of the saved Tournament into the Database | It successfullt retrieved the created tournament from the Database as expected |Passed |
+| Test if the Tournaments completed are saved properly as completed ones in the database |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the TournamentRecords saved for player2 and tournament solved|  It should return the Tournament solved by player2 and the size of returned list should be 1 |  It reteurned the Tournament solved by player2 and the size of returned list is 1 which was the expected result |  Passed |
+
+<br />
+<br />
+<br />
+
+**Solve tournament UseCase**
+
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the playable Tournaments are none when no other Player has created Tournaments but the Player intended to play the tournament has one tournament created. |create a Player; create 5 Puzzles and a Tournament using them; Then retrive the playable Tournaments by the player; | It should return an empty list | It returned an empty list as expected |Passed |
+| Test if the Tournaments completed are not playable for the same Player |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the Tournaments player2 can play further|  It should return an empty list of tournaments |  It returned an empty list of tournaments and it is the expected result | Passed |
+| Test the boundary condition what tournament returns when Two Tournaments exist and only one of them created by Player intended to play a Tournament |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; create 5 Puzzles and a Tournament using them;Logout player2; Login player1; Retrive the playable Tournaments; Repeate this test for 10 times|  It should return the Tournament created by player1 in every iteration |  It returned the Tournament created by player1 in every iteration which was the expected result | Passed |
+| Test if the Tournament is playable even when that has one or more Puzzles which have already been completed by the Player. |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve a randomly selected Puzzle and complete it; Retrive the playable Tournaments;|  It should return the Tournament created by player1 and the size of returned list should be 1 |  It returned the Tournament created by player1 and the size of returned list was be 1 which was the expected result| Passed |
        
        
 [076fe412]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues "GitHub Issues"
