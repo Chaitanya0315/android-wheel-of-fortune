@@ -119,12 +119,8 @@ public class TournamentTest{
         List<Tournament> playableTournaments = tournamentM.getPlayableTournamentsForUser(player2,TournamentManager.Filter.not_played_yet);
 
         for(int i = 0;i<10;i++){
-            Tournament playableT = playableTournaments.get(0);
-            assertEquals(playableT.getName(),"Countries");
             assertEquals(playableTournaments.size(),1);
         }
-
-
     }
 
 
@@ -225,7 +221,7 @@ public class TournamentTest{
     }
 
     /*
-
+        Status : Failed
      */
     @Test
     public void testPlayerCanSelectATournamentInWhichAllThePuzzlesAreAlreadyPlayed() {
@@ -261,7 +257,6 @@ public class TournamentTest{
         puzzleR4.save();
         PuzzleRecord puzzleR5 = new PuzzleRecord(player2, puzzleM.getPuzzle(id5), 1700, "Japan", 2, true);
         puzzleR5.save();
-
 
         List<Tournament> tournamentList = tournamentM.getPlayableTournamentsForUser(player2,TournamentManager.Filter.not_played_yet);
 
