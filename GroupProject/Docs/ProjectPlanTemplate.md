@@ -90,8 +90,9 @@ The following activities describe the overall software development process that 
 | -------------- |------------------------| 
 | Brigit Hawley  | bhawley3@gatech.edu    |
 | Robert Johnson | rjohnson348@gatech.edu |
-| Sahan De Silva | rsilva32@gatech.edu    |
 | HaoHao Wang    | hwang404@gatech.edu    |
+| Sahan De Silva | rsilva32@gatech.edu    |
+
 
 Each member will be responsible for multiple artifacts while expected to attend and participate actively in regular meetings which are scheduled as needed. In addition, team members will collaborate on Google docs and slack to resolve dendencies and render the support needed by other fellow teammates. Once the development phase is commenced regular code reviews on gitHub are expected by each member for quality assurance purposes.  
 
