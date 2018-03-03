@@ -61,18 +61,12 @@ Here are some rough drafts of the GUI for the 'Wheel of Fortune' Team11 applicat
 <img src="../Design-Team/Resources/Beta-Mockups/play_puzzle.png" width="180">
 <img src="../Design-Team/Resources/Beta-Mockups/won_puzzle.png" width="180">
 
-##### Create, Play or Win Tournament
-<img src="../Design-Team/Resources/Beta-Mockups/create_tournament.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/play_tournament.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/won_tournament.png" width="180">
+##### Create, Play, Contiue or Win Tournament
+Create Tournament | Play Tournament | Continue Tournament | Win Tournament
+:----------------:|:---------------:|:-------------------:|:---------------:
+<img src="../Design-Team/Resources/Beta-Mockups/create_tournament.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/play_tournament.png" width="180"> |<img src="../Design-Team/Resources/Beta-Mockups/select_continue_tournament.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/won_tournament.png" width="180">
 
-##### Select or Contiue Tournament
-<img src="../Design-Team/Resources/Beta-Mockups/select_tournament.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/select_continue_tournament.png" width="180">
-
-##### Puzzle Stats - per Player and per Puzzle
-
-
+##### Statistics
 Puzzle Statistics for Player | Puzzle Statistics for Puzzle | Tournament Statistics for Player | Tournament Statistics for Tournament
 :-------------------------------:|:------------------------------------:|:------------------------------------:|:------------------------------------:
 <img src="../Design-Team/Resources/Beta-Mockups/player_puzzle_stats.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/puzzle_stats.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/player_tournament_stats.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/tournament_stats.png" width="180">
