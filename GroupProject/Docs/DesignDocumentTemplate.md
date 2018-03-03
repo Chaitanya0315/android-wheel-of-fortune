@@ -75,6 +75,6 @@ Here are some rough drafts of the GUI for the 'Wheel of Fortune' Team11 applicat
 <img src="../Design-Team/Resources/Beta-Mockups/puzzle_stats.png" width="180">
 
 ##### Tournament Stats - per Player and per Tournament
-Tournament Stats for Player |  Solarized Ocean
-:--------------------------:|:-------------------------:
+Tournament Statistics for Player | Tournament Statistics for Tournament
+:-------------------------------:|:------------------------------------:
 <img src="../Design-Team/Resources/Beta-Mockups/player_tournament_stats.png" width="180">  | <img src="../Design-Team/Resources/Beta-Mockups/tournament_stats.png" width="180">
