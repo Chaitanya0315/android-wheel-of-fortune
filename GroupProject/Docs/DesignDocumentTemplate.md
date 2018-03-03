@@ -52,5 +52,5 @@ None at this time. Will be included later when code sequences are better defined
 Here are some rough drafts of the GUI for the 'Wheel of Fortune' Team11 application. The following images are by no means final and are subject to change. 
 
 ![GUI Mockup](../Design-Team/Resources/design-mockups.png)
-![Create Player Mockup](../Design-Team/Resources/Beta-Mockups/create_player.png)
-#####Create Player
+![Create Player Mockup](../Design-Team/Resources/Beta-Mockups/create_player.png | width=100)
+##### Create Player
