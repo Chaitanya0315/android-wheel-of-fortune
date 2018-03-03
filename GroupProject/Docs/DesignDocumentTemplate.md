@@ -51,17 +51,17 @@ None at this time. Will be included later when code sequences are better defined
 
 Here are some rough drafts of the GUI for the 'Wheel of Fortune' Team11 application. The following images are by no means final and are subject to change. 
 
-##### Create or Login Player and Play GuessIt Options
-<img src="../Design-Team/Resources/Beta-Mockups/login.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/create_player.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/play_guessit.png" width="180">
+##### Login and Main Menu
+Create Player | Player Login | GuessIt Main Menu
+:------------:|:------------:|:-----------------:
+<img src="../Design-Team/Resources/Beta-Mockups/login.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/create_player.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/play_guessit.png" width="180">
 
-##### Create, Play or Win Puzzle
-<img src="../Design-Team/Resources/Beta-Mockups/create_puzzle.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/play_puzzle.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/won_puzzle.png" width="180">
+##### Puzzles
+Create Puzzle | Play Puzzle | Win Puzzle
+:------------:|:-----------:|:-----------:
+<img src="../Design-Team/Resources/Beta-Mockups/create_puzzle.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/play_puzzle.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/won_puzzle.png" width="180">
 
-##### Create, Play, Contiue or Win Tournament
+##### Tournaments
 Create Tournament | Play Tournament | Continue Tournament | Win Tournament
 :----------------:|:---------------:|:-------------------:|:---------------:
 <img src="../Design-Team/Resources/Beta-Mockups/create_tournament.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/play_tournament.png" width="180"> |<img src="../Design-Team/Resources/Beta-Mockups/select_continue_tournament.png" width="180"> | <img src="../Design-Team/Resources/Beta-Mockups/won_tournament.png" width="180">
