@@ -93,17 +93,6 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 <br />
 <br />
 
-**Database Subsystem**
-
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
-| ------ | ------ | ------ | ------ | ------ |
-| Test if the database records the puzzle stats correctly when the player interrupt and exits the game| After the last puzzle play click on view stats | puzzle shall be stored in the database as already being played by the user; prize for the puzzle just played shall be the prize shown when the player left the game| --- | --- |
-|Test if the database records the puzzle stats correctly when the player solve the puzzle correctly| guess a puzzle correctly; select view stats in the main menu | the puzzle just played shall display the correct prize as expected| --- | --- |
-
-<br />
-<br />
-<br />
-
 
 **Create Tournament UseCase**
 
@@ -134,9 +123,10 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
-| Test if the top prize player is correctly detemined for each puzzle | Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again; 2nd user starts 3rd tournament; quit after completing the 1st puzzle; select join an existing tournament; create the 4th tournament ; create 3rd user; complete 1st tournament with better prize on 4 puzzles and total prize than 2nd user; return to main menu and display stats| puzzle 1-4 shall show 3rd user as top player and puzzle 5 should show 2nd user; tournament shall show 3rd user as the top player| --- | --- |
-| Test if the Correct statistical data is tracked by the System| Complete all the Puzzles in a Tournament; return to main menu and select view stats | stats for the tournament should be correctly displayed| --- | --- |
-| Test if the existing Puzzle Prizes are counted when they appear in a Tournament selected to be played | Login as the Player 1, create 5 Puzzles and a Tournament which includes the 5 puzzles created; Logout and Login as Player 1; Select Solve Random puzzle and complete it; Then select Play Tournament; Play all the Puzzles to Complete the Tournament where the Puzzle already played should be completed with a Prize different from what earned when it was played alone; Selct Tournament's Prize Tab| Prize earned for the randome puzzle played is in the Tournament selected and should be counted into the tournament Prize even when that Puzzle is played again in the current Tournament| --- | --- |
+| Test if the Correct statistical data is tracked by the System| create player1; create 5 puzzles and a Tournament; logout; create player2; select play tournament; Complete all the Puzzles in the Tournament; return to main menu and select view Player Puzzle Stats, Player Tournament Stats | stats for the tournament and puzzles should be displayed correctly for the player1| As expected correct statistical data is displayed by the Application for player one on 1-5 puzzles and the Tournament played | Passed |
+| Test if the top prized player is correctly detemined for each puzzle | create player1; Create 5 puzzles and 1st tournament; logout and login as 2nd player; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st player; Create 5 puzzles and 3rd tournament; logout and login as 2nd player; complete the first tournament; select join random tournament again where 2nd user starts 3rd tournament and quit after completing the 1st puzzle; create the 4th tournament ; logout and login from player1's account;select join an incomplete Tournament; complete all the Puzzles; create 3rd user; complete 1st tournament with better prize on first to fourth puzzles and total prize than 2nd user; return to main menu and display stats| puzzle 1-4 shall show 3rd user as top player and puzzle 5 should show 2nd user; tournament shall show 3rd user as the top player| As expected Puzzles 1-4 show 3rd user as the top player and olayer3 is the top player for puzzle5. Top player for Tournament1 is player3 | Passed |
+| Test if the existing Puzzle Prizes are counted when they appear in a Tournament selected to be played | create Player 1, create 5 Puzzles(Puzzle1-Puzzle5) and a Tournament(Tournament1) which includes the 5 puzzles created; Logout and Login as Player 2; Select Solve Random puzzle and complete Puzzle1 created by player1; Then select Play Tournament and select the Tournament1 created by player1| The puzzle already completed should be displayed in the Tournament as complete with the earned Prize and it should not be allowed to play again as a part of the Tournament play| As expected Puzzle1 is displayed in Tournament1 as complete with the Prize earned and is disabled to play again | Passed |
+| Test if the database records the Puzzle/Tournament stats correctly| create player1; create 5 Puzzles and a Tournament; create player2; select play Tournament; complete Puzzle1 and Puzzle2; quit the Tournament play; select Player Puzzle Stat and Player Tournament Stat| Puzzle1 and Puzzle2 shall be stored in the database as already being played by the user with respective prizes earned; Prize for the Tournament should not still be logged as it's still incompleted| As expected prize for the Puzzle1 and Puzzle2 is recorded correctlt by the Databse and the retrieval isdone correctly by the Application. Tournament prize is not logged as it's incomplete | Passed |
 
 <br />
 <br />
