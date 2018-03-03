@@ -49,7 +49,7 @@ public class CreatePlayerActivity extends AppCompatActivity {
 
         // TODO: Check validity of fields
 
-        if (playerManager.doesUsenameExist(userName)) {
+        if (playerManager.doesUsernameExist(userName)) {
             Snackbar.make(v, "Sorry that user already exists", Snackbar.LENGTH_LONG)
                     .setAction("Dismiss", null).show();
         } else {

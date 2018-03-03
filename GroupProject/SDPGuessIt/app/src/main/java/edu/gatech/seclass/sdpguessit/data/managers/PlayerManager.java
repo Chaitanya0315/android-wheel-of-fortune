@@ -23,7 +23,7 @@ public class PlayerManager {
         player.save();
     }
 
-    public boolean doesUsenameExist(String username) {
+    public boolean doesUsernameExist(String username) {
         return getPlayerByUsername(username) != null;
     }
 
