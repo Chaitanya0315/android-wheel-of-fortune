@@ -23,27 +23,30 @@ The 'GuessIt' Android Application is a game application simulating the popular '
 
 ## 1.1 System Requirements
 The following minimum system criteria must be met for the GuessIt application to run.
-* 20 MB of application memory available
+* 5 MB of application memory available
 * Running an Android OS of Jelly Bean (4.1 onward)
-* Access to a developer enabled machine that has Android Studio 3.0.1 and git installed.
+* Access to a machine that has Git 2.10.1 installed 
 
 ## 1.2 Known Issues and Limitations
-TODO - Need Robert's help in filling this in. 
+Since this is a beta release, we are still in the testing phase of the application's life cycle. At this time there are no known significant issues, but there are a few minor issues tracked through our bug tracking system. To view the current list of bugs and their status, see the [issues section](https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues ) issues section of our Github repository. 
 
 ## 1.3 Help and Support
 If any issues in running the GuessIt application are found, please contact Team11 through the following means:
 
-| Contact Name  | Email              |
-| ------------- |-------------------:| 
-| Brigit Hawley | bhawley@gatech.edu |
+| Contact Name   | Email                  |
+| -------------- |-----------------------:| 
+| Brigit Hawley  | bhawley3@gatech.edu    |
+| Robert Johnson | rjohnson348@gatech.edu |
+| Sahan De Silva | rsilva32@gatech.edu    |
+| HaoHao Wang    | hwang404@gatech.edu    |
 
 ## 2.0 Getting Started
 
-## 2.1 Android Studio
-At this time, the Team11 GuessIt application has no build system set up. This means that we do not have a published deliverable for the user to access from the Play Store. As an interim solution for this release we are recommending that the user clone a copy of the source code and build the executable manually. For access to the git repository, please contact the support staff listed above. 
+## 2.1 Git
+To obtain access to the GuessIt application the user must first clone our repository. The repository can be accessed [here](https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11). If a user needs access to our repository, please contact the support staff listed above. 
 
 ## 2.2 Installation
-This application can currently only be installed from Android Studio. To do so, please clone Team11's git repository and build the application onto your desired device. This does require a minimum understanding of developer environments and if assistance is needed, please contact the support staff listed above. 
+There is an APK available for installation of the GuessIt application. It can be accessed through our git repository.
 1. Clone Team11's git repository
 2. Import the project into Android Studio
 3. Build and install the GuessIt Application onto your desired device 

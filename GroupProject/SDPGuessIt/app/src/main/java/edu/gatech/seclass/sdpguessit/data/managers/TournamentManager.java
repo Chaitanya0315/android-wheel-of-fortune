@@ -1,5 +1,7 @@
 package edu.gatech.seclass.sdpguessit.data.managers;
 
+import android.text.TextUtils;
+
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -33,6 +35,16 @@ public class TournamentManager {
 
     public List<Tournament> getTournaments() {
         return Tournament.listAll(Tournament.class);
+    }
+
+    public boolean doesTournamentNameExist(String name){
+        for(Tournament tournament : getTournaments()){
+            if(TextUtils.equals(tournament.getName().toLowerCase(), name.toLowerCase())){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public List<Tournament> getPlayableTournamentsForUser(Player player, TournamentManager.Filter filter) {

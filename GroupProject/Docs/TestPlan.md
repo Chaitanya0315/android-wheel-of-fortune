@@ -29,7 +29,19 @@ At the integration test level, we will focus primarily on the functional coverag
 
 ### 1.4 Bug Tracking
 
-Bugs and enhancement requests will be handled using GitHub Issues for the project ([Issues][076fe412]). We will track any issues found in the app or app enhancement needs here.
+Bugs and enhancement requests weree handled using GitHub Issues for the project ([Issues][076fe412]). We tracked all the issues found in the app or app enhancement needs here. The same procedure will be followed for the upcoming delivarables and releases of the Application. Issues we found so far and tracked with the help of 'github issue tracking' are as follows.
+
+|                            Issue                           | Description                                                                                                                                                                                                                                                                                                                                              | Status |
+|:----------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------:|
+| Return button not present                                  | Need a return button in 'create player' UI                                                                                                                                                                                                                                                                                                               | Closed |
+| Tournament name should be unique                           | Tournament name should be unique according to requirement 10.C and we have missed it                                                                                                                                                                                                                                                                     | Closed |
+| BuyVowel Should Always Cost $300                           | According to AC 6.b.ii buying a vowel should always cost $300. Currently, the application only subtracts $300 from the prize value when the guess is correct.  Reproduction: Launch app -> Login ->  Select Play Puzzle ->  Increase the score enough to have more than $300 ->  Buy a vowel that is incorrect - the prize value will not be decremented | Open   |
+| Typo in getPlayableTournamentsForUser method               | Not a big issue. In TournamentManager.java in getPlayableTournamentsForUser there is a typo of one of the local variables.The name is ownedPuzsle instead of ownedPuzzle.Repo:Open TournamentManager.javaNavigate to getPlayableTournamentsForUserSee boolean ownedPuzsle                                                                                | Open   |
+| Wrong Error Message when username is blank at registration | When a username is not provided by the user during registration, the error message is "Sorry, that user already exists". Should change to something like "Please enter username".Also, right now we can register as long as we enter username. The project spec implied but didn't say clearly that firstname, lastname, email are required fields.      | Open   |
+| Create Tournament Activity Title Misspelled                | Reproduction: Launch appLogin -> Click Create Tournament -> Look at page title                                                                                                                                                                                                                                                                           | Open   |
+| Puzzles are shown by their phrase | when puzzles are listed for solve tournament operation they are displayed by phrase itself. where we show the phrase to the player before start solving. I think we would need another string for puzzles as their title so that it could be used to let the player select which puzzle to play.Test steps: create player1 -> Create 5 puzzles and a Tournament by adding them -> logout -> create player 2 -> select play Tournament      | Open   |
+| Manual Test - Tournament should consist of 1-5 puzzles                | Right now we can add more than 5 puzzles into a Tournament and according to the requirement 10.a Tournament can have 1-5 puzzles.Test steps: create a player1 -> create 6 puzzles -> create a Tournament and select all 6 puzzles for the tournament with a unique name -> See if it is accepted  | Open   |
+| Minimum guesses allowed should be 1  | According to the Requirements minimum guesses allowed are between 0 and 10. The minimum should be 1 and maximum should be 9. Right now we can select 0 and 10 as maximum guesses. It's debatable whether 10 is allowed or not but the minimum should be 1. Test Steps: -> create player1 -> select create puzzle -> select max guesses - 0 allwed -> select 0 -> create player 2 -> select the puzzle create by player1 -> puzzle is displayed and doesn't let the player2 to make any guesses and terminates right away by displaying a message that player2 is lost | Open   |
 
 ### 1.5 Technology
 
@@ -37,7 +49,9 @@ Currently, the only planned testing technology is JUnit. If the project proves t
 
 ## 2 Test Cases
 
-Test cases will be developed as follows for each subsection.
+Our Test Plan consists of both manual and automated Testing. Test cases will be developed as follows for each UseCase.
+
+### * Manual Test Cases
 
 **Login UseCase**
 
@@ -63,20 +77,6 @@ Test cases will be developed as follows for each subsection.
 <br />
 <br />
 
-**Create Tournament UseCase**
-
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
-| ------ | ------ | ------ | ------ | ------ |
-| Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | --- | --- |
-| Test if the system will select a puzzle already played by the user as a direct play| create 2 puzzles; complete one puzzle; select play random puzzle 10 times | the puzzle already played shall not be selected| --- | --- |
-| Test if the system will select a puzzle already played by the user in a tournament| create a tournament with 5 puzzles and complete all of them; create 6th puzzle; select play random puzzle 10 times | the 6th puzzle shall always be selected| --- | --- |
-| Test if the system will select a puzzle created by the User| create 6 puzzles where only one of them by the tester; select create Tournament; repeat the test for few times |Tester/User should not see the Puzzle he/she created in each iteration| --- | --- |
-| Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | --- | --- |
-
-<br />
-<br />
-<br />
-
 **Solve Puzzle UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
@@ -87,17 +87,22 @@ Test cases will be developed as follows for each subsection.
 | Test if solve the puzzle function acts correctly| select solve a puzzle; make a guess | all remaining blanks has to be filled; correct guess will increase the prize value by $1000 for each letter not yet revealed; wrong guess will receive $0 for the puzzle; ends the game| --- | --- |
 | Test if the exit/continue functions for Puzzles act correctly| start a puzzle; select exit; select continue; select exit; select leave | confirmation window pops up when selecting exit for the first time; continue button available for user and takes user back to the game; return to the main menu when selecting exit again before clicking on the leave button on the confirmation window| --- | --- |
 | Test if an already played Puzzle is displayed to the User to play | Create muliple Puzzles fro the Tester's Player account; select solve Random Puzzle option | Tester should not see any Puzzle as a option to play| --- | --- |
+| Test if the system will select a puzzle already played by the user as a direct play| create 2 puzzles; complete one puzzle; select play random puzzle 10 times | the puzzle already played shall not be selected| --- | --- |
 
 <br />
 <br />
 <br />
 
-**Database Subsystem**
+
+**Create Tournament UseCase**
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
-| Test if the database records the puzzle stats correctly when the player interrupt and exits the game| After the last puzzle play click on view stats | puzzle shall be stored in the database as already being played by the user; prize for the puzzle just played shall be the prize shown when the player left the game| --- | --- |
-|Test if the database records the puzzle stats correctly when the player solve the puzzle correctly| guess a puzzle correctly; select view stats in the main menu | the puzzle just played shall display the correct prize as expected| --- | --- |
+| Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | When the name is not entered or the puzzles are not selected for the Tournament an error message: "Sorry the name cannot be empty and puzzles must be selected" is displayed to the user as expected | Passed |
+| Test if the system will select a puzzle already played by the user in a tournament| create player1; create a tournament with 5 puzzles ;create the 6th standalone puzzle; Logout player1;create player2; complete the tournament completed by the player1; select play random puzzle 10 times | the 6th standalone puzzle create by player1 shall always be selected for player1| As expected only the 6th puzzle created by player1 is displayed as the only option for the player2 to play as a random puzzle | Passed |
+| Test if the system will select a puzzle created by the User| create player1; create 5 puzzles from player1's account; logout player1; create player2; create a puzzle from player2's account; select create Tournament from player2's account; repeat the test for few times |Player2 should only see the Puzzle he/she created in each iteration as an option to add in a Tournament created| As expected puzzle created by player2 was the only displayed to the player2 in each iteration | Passed |
+| Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | As expected an error message:"Name already exists!" is displayed to the User| Passed |
+| Test if the Tournament can select more than 5 puzzles| create a player1; create 6 puzzles; create a Tournament and select all 6 puzzles for the tournament with a unique name | Error message | It was allowed which is not the expected case and logged an issue on Github issue tracker| Failed |
 
 <br />
 <br />
@@ -107,9 +112,8 @@ Test cases will be developed as follows for each subsection.
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
-| Test if joining an invalid tournament is possible - Senario 1| Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament | tournament created by the 2nd user shall always be displayed| --- | --- |
-| Test if joining an invalid tournament is possible - Senario 2|Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again | the 3rd tournament shall always be displayed| --- | --- |
-| Test the 'continue a tournament function'| Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again; 2nd user starts 3rd tournament; quit after completing the 1st puzzle; select join an existing tournament; create the 4th tournament | the 3rd tournament shall always be displayed| --- | --- |
+| Test if joining an invalid tournament is possible|Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again; repeat join Tournament for 5 times | the 3rd tournament shall always be displayed in each iteration| As expected the third tournament is displayed in each iteration | Passed |
+| Test the 'continue a tournament function'| create player1; Create 5 puzzles and 1st tournament; logout and login as 2nd player; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st player; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd player; complete the first tournament; logout player2 and login player2; select join random tournament again; start 3rd tournament; quit after completing the 1st puzzle; logout player2 and login player2; select continue tournament | the 3rd tournament shall always be displayed to player2| As expected Tournament2 is displayed to player2 | Passed |
 
 <br />
 <br />
@@ -119,8 +123,38 @@ Test cases will be developed as follows for each subsection.
 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
-| Test if the top prize player is correctly detemined for each puzzle | Create 5 puzzles and 1st tournament; logout and login as 2nd user; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st user; select join a new tournament ; Create 5 puzzles and 3rd tournament; logout and login as 2nd user; complete the first tournament; select join random tournament again; 2nd user starts 3rd tournament; quit after completing the 1st puzzle; select join an existing tournament; create the 4th tournament ; create 3rd user; complete 1st tournament with better prize on 4 puzzles and total prize than 2nd user; return to main menu and display stats| puzzle 1-4 shall show 3rd user as top player and puzzle 5 should show 2nd user; tournament shall show 3rd user as the top player| --- | --- |
-| Test if the Correct statistical data is tracked by the System| Complete all the Puzzles in a Tournament; return to main menu and select view stats | stats for the tournament should be correctly displayed| --- | --- |
-| Test if the existing Puzzle Prizes are counted when they appear in a Tournament selected to be played | Login as the Player 1, create 5 Puzzles and a Tournament which includes the 5 puzzles created; Logout and Login as Player 1; Select Solve Random puzzle and complete it; Then select Play Tournament; Play all the Puzzles to Complete the Tournament where the Puzzle already played should be completed with a Prize different from what earned when it was played alone; Selct Tournament's Prize Tab| Prize earned for the randome puzzle played is in the Tournament selected and should be counted into the tournament Prize even when that Puzzle is played again in the current Tournament| --- | --- |
+| Test if the Correct statistical data is tracked by the System| create player1; create 5 puzzles and a Tournament; logout; create player2; select play tournament; Complete all the Puzzles in the Tournament; return to main menu and select view Player Puzzle Stats, Player Tournament Stats | stats for the tournament and puzzles should be displayed correctly for the player1| As expected correct statistical data is displayed by the Application for player one on 1-5 puzzles and the Tournament played | Passed |
+| Test if the top prized player is correctly detemined for each puzzle | create player1; Create 5 puzzles and 1st tournament; logout and login as 2nd player; create 5 different puzzles and 2nd tournament; logout and log back in as the 1st player; Create 5 puzzles and 3rd tournament; logout and login as 2nd player; complete the first tournament; select join random tournament again where 2nd user starts 3rd tournament and quit after completing the 1st puzzle; create the 4th tournament ; logout and login from player1's account;select join an incomplete Tournament; complete all the Puzzles; create 3rd user; complete 1st tournament with better prize on first to fourth puzzles and total prize than 2nd user; return to main menu and display stats| puzzle 1-4 shall show 3rd user as top player and puzzle 5 should show 2nd user; tournament shall show 3rd user as the top player| As expected Puzzles 1-4 show 3rd user as the top player and olayer3 is the top player for puzzle5. Top player for Tournament1 is player3 | Passed |
+| Test if the existing Puzzle Prizes are counted when they appear in a Tournament selected to be played | create Player 1, create 5 Puzzles(Puzzle1-Puzzle5) and a Tournament(Tournament1) which includes the 5 puzzles created; Logout and Login as Player 2; Select Solve Random puzzle and complete Puzzle1 created by player1; Then select Play Tournament and select the Tournament1 created by player1| The puzzle already completed should be displayed in the Tournament as complete with the earned Prize and it should not be allowed to play again as a part of the Tournament play| As expected Puzzle1 is displayed in Tournament1 as complete with the Prize earned and is disabled to play again | Passed |
+| Test if the database records the Puzzle/Tournament stats correctly| create player1; create 5 Puzzles and a Tournament; create player2; select play Tournament; complete Puzzle1 and Puzzle2; quit the Tournament play; select Player Puzzle Stat and Player Tournament Stat| Puzzle1 and Puzzle2 shall be stored in the database as already being played by the user with respective prizes earned; Prize for the Tournament should not still be logged as it's still incompleted| As expected prize for the Puzzle1 and Puzzle2 is recorded correctlt by the Databse and the retrieval isdone correctly by the Application. Tournament prize is not logged as it's incomplete | Passed |
 
+<br />
+<br />
+<br />
+
+### * Automated Test Cases
+
+Automated Instrumentation Test Cases can be found in AndroidTest directory.
+
+**Create Tournament UseCase and Databse subsystem**
+
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the Tournament Created is saved properly in the Database | Create 5 puzzles and 1st tournament; retrieve tournament name from the saved tournament list with the help of the Tournament ID| Successful retrival of the saved Tournament into the Database | It successfullt retrieved the created tournament from the Database as expected |Passed |
+| Test if the Tournaments completed are saved properly as completed ones in the database |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the TournamentRecords saved for player2 and tournament solved|  It should return the Tournament solved by player2 and the size of returned list should be 1 |  It reteurned the Tournament solved by player2 and the size of returned list is 1 which was the expected result |  Passed |
+
+<br />
+<br />
+<br />
+
+**Solve tournament UseCase**
+
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the playable Tournaments are none when no other Player has created Tournaments but the Player intended to play the tournament has one tournament created. |create a Player; create 5 Puzzles and a Tournament using them; Then retrive the playable Tournaments by the player; | It should return an empty list | It returned an empty list as expected |Passed |
+| Test if the Tournaments completed are not playable for the same Player |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve the Tournament created by player1 and complete it; Retrive the Tournaments player2 can play further|  It should return an empty list of tournaments |  It returned an empty list of tournaments and it is the expected result | Passed |
+| Test the boundary condition what tournament returns when Two Tournaments exist and only one of them created by Player intended to play a Tournament |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; create 5 Puzzles and a Tournament using them;Logout player2; Login player1; Retrive the playable Tournaments; Repeate this test for 10 times|  It should return the Tournament created by player1 in every iteration |  It returned the Tournament created by player1 in every iteration which was the expected result | Passed |
+| Test if the Tournament is playable even when that has one or more Puzzles which have already been completed by the Player. |create a Player: player1 ; create 5 Puzzles and a Tournament using them;Logout player1;create a Player: player2 ; Solve a randomly selected Puzzle and complete it; Retrive the playable Tournaments;|  It should return the Tournament created by player1 and the size of returned list should be 1 |  It returned the Tournament created by player1 and the size of returned list was be 1 which was the expected result| Passed |
+       
+       
 [076fe412]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues "GitHub Issues"

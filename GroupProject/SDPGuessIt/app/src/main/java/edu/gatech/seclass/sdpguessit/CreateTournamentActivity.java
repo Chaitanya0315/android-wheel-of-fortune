@@ -104,13 +104,17 @@ public class CreateTournamentActivity extends AppCompatActivity {
     void addTournament(View v) {
         String mName = name.getText().toString();
 
-        if (TextUtils.isEmpty(mName) || selectedPuzzles.isEmpty()) {
-            Snackbar.make(v, "Sorry the name cannot be empty", Snackbar.LENGTH_LONG)
-                    .setAction("Dismiss", null).show();
-        } else {
-            Long id = tournamentManager.createNewTournament(player, mName, selectedPuzzles);
-            Toast.makeText(this, "Tournament Added! (" + id + ")", Toast.LENGTH_SHORT).show();
-            finish();
+        if(!tournamentManager.doesTournamentNameExist(mName)) {
+            if (TextUtils.isEmpty(mName) || selectedPuzzles.isEmpty()) {
+                Snackbar.make(v, "Sorry the name cannot be empty and puzzles must be selected", Snackbar.LENGTH_LONG)
+                        .setAction("Dismiss", null).show();
+            } else {
+                Long id = tournamentManager.createNewTournament(player, mName, selectedPuzzles);
+                Toast.makeText(this, "Tournament Added! (" + id + ")", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }else{
+            name.setError("Name already exists");
         }
     }
 
