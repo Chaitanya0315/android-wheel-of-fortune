@@ -82,19 +82,6 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 | Test if the system allows creating a puzzle with missing user input | leave puzzle input box blank | error message and submit is non-clickable | error message | pass | Manual Test |
 | Test if the system allows creating a puzzle with negative or greater than 9 allowable guesses | input negative or numbers greater than 9 in the max allowable guesses input box | only value between 0-10 is available | select from 0 to 10 | pass | Manual Test |
 
-<br />
-<br />
-<br />
-
-**Create Tournament UseCase**
-
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |  Testing Technology  |
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | --- | --- | ------ |
-| Test if the system will select a puzzle already played by the user as a direct play| create 2 puzzles; complete one puzzle; select play random puzzle 10 times | the puzzle already played shall not be selected| --- | --- |
-| Test if the system will select a puzzle already played by the user in a tournament| create a tournament with 5 puzzles and complete all of them; create 6th puzzle; select play random puzzle 10 times | the 6th puzzle shall always be selected| --- | --- |
-| Test if the system will select a puzzle created by the User| create 6 puzzles where only one of them by the tester; select create Tournament; repeat the test for few times |Tester/User should not see the Puzzle he/she created in each iteration| --- | --- |
-| Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | --- | --- |
 
 <br />
 <br />
