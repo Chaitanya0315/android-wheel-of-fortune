@@ -71,10 +71,10 @@ Here are some rough drafts of the GUI for the 'Wheel of Fortune' Team11 applicat
 <img src="../Design-Team/Resources/Beta-Mockups/select_continue_tournament.png" width="180">
 
 ##### Puzzle Stats - per Player and per Puzzle
-<img src="../Design-Team/Resources/Beta-Mockups/player_puzzle_stats.png" width="180">
-<img src="../Design-Team/Resources/Beta-Mockups/puzzle_stats.png" width="180">
 
-##### Tournament Stats - per Player and per Tournament
-Tournament Statistics for Player | Tournament Statistics for Tournament
-:-------------------------------:|:------------------------------------:
+
+Puzzle Statistics for Player | Puzzle Statistics for Puzzle | Tournament Statistics for Player | Tournament Statistics for Tournament
+:-------------------------------:|:------------------------------------:|:------------------------------------:|:------------------------------------:
+<img src="../Design-Team/Resources/Beta-Mockups/player_puzzle_stats.png" width="180"> |
+<img src="../Design-Team/Resources/Beta-Mockups/puzzle_stats.png" width="180"> |
 <img src="../Design-Team/Resources/Beta-Mockups/player_tournament_stats.png" width="180">  | <img src="../Design-Team/Resources/Beta-Mockups/tournament_stats.png" width="180">
