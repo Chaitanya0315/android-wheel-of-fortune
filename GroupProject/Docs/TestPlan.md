@@ -33,7 +33,7 @@ Bugs and enhancement requests weree handled using GitHub Issues for the project 
 
 |                            Issue                           | Description                                                                                                                                                                                                                                                                                                                                              | Status |
 |:----------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------:|
-| [Return button not present][076fe421]                                | Need a return button in 'create player' UI                                                                                                                                                                                                                                                                                                               | Closed |
+| Return button not present                              | Need a return button in 'create player' UI                                                                                                                                                                                                                                                                                                               | Closed |
 | Tournament name should be unique                           | Tournament name should be unique according to requirement 10.C and we have missed it                                                                                                                                                                                                                                                                     | Closed |
 | BuyVowel Should Always Cost $300                           | According to AC 6.b.ii buying a vowel should always cost $300. Currently, the application only subtracts $300 from the prize value when the guess is correct.  Reproduction: Launch app -> Login ->  Select Play Puzzle ->  Increase the score enough to have more than $300 ->  Buy a vowel that is incorrect - the prize value will not be decremented | Open   |
 | Typo in getPlayableTournamentsForUser method               | Not a big issue. In TournamentManager.java in getPlayableTournamentsForUser there is a typo of one of the local variables.The name is ownedPuzsle instead of ownedPuzzle.Repo:Open TournamentManager.javaNavigate to getPlayableTournamentsForUserSee boolean ownedPuzsle                                                                                | Open   |
@@ -219,19 +219,29 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 [076fe412]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues "GitHub Issues"
 
-[076fe420]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe421]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe422]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe423]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe424]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe425]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe420]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/2 "#2"
+[076fe421]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/3 "#3"
+[076fe422]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/4 "#4"
+[076fe423]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/5 "#5"
+[076fe424]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/6 "#6"
+[076fe425]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/7 "#7"
 [076fe426]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe427]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe428]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe429]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe42a]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe42b]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
-[076fe42c]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe427]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/9 "#9"
+[076fe428]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/10 "#10"
+[076fe429]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/11 "#11"
+[076fe42a]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/12 "#12"
+[076fe42b]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/13 "#13"
+[076fe42c]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/14 "#14"
+
+
+
+
+
+
+
+
+
+
 
 
 
