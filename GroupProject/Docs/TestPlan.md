@@ -33,7 +33,7 @@ Bugs and enhancement requests weree handled using GitHub Issues for the project 
 
 |                            Issue                           | Description                                                                                                                                                                                                                                                                                                                                              | Status |
 |:----------------------------------------------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------:|
-| Return button not present                                  | Need a return button in 'create player' UI                                                                                                                                                                                                                                                                                                               | Closed |
+| [076fe421[Return button not present]                                | Need a return button in 'create player' UI                                                                                                                                                                                                                                                                                                               | Closed |
 | Tournament name should be unique                           | Tournament name should be unique according to requirement 10.C and we have missed it                                                                                                                                                                                                                                                                     | Closed |
 | BuyVowel Should Always Cost $300                           | According to AC 6.b.ii buying a vowel should always cost $300. Currently, the application only subtracts $300 from the prize value when the guess is correct.  Reproduction: Launch app -> Login ->  Select Play Puzzle ->  Increase the score enough to have more than $300 ->  Buy a vowel that is incorrect - the prize value will not be decremented | Open   |
 | Typo in getPlayableTournamentsForUser method               | Not a big issue. In TournamentManager.java in getPlayableTournamentsForUser there is a typo of one of the local variables.The name is ownedPuzsle instead of ownedPuzzle.Repo:Open TournamentManager.javaNavigate to getPlayableTournamentsForUserSee boolean ownedPuzsle                                                                                | Open   |
@@ -81,8 +81,8 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 | Test if the system allows creating a puzzle with a missing Phrase | leave puzzle input box blank | error message and submit is non-clickable | error message | pass | Manual Test |
 | Test if the system allows creating a puzzle with a missing maximum number of wrong guesses | create player1;Select 'Create Puzzle';Select Phrase and Identifier; Select create Puzzle button | Should not be allowed to create a Puzzle without the maximum number of wrong guesses selected | 0 is selected by default | pass | Manual Test |
 | Test if the system allows creating a puzzle with a missing Title/Identifier | create player1;Select 'Create Puzzle';Select Phrase and maximum number of allowed wrong guesses;  Select create Puzzle button | Identifier/Title should be required to create the Puzzle | An option is not present to select an Identifier | Fail | Manual Test |
-| Test if the system allows creating a puzzle with zero or negative number of guesses | negatives should not be allowed as an option to select as the max allowable guesses input box | only value between 0-10 is available | option to select from 0 to 10 | Fail | Manual Test |
-| Test if the system allows greater than 9 allowable guesses | input negative or numbers greater than 9 in the max allowable guesses input box | only value between 0-10 is available | select from 0 to 10 | Fail | Manual Test |
+| Test if the system allows creating a puzzle with negative number of guesses | negatives should not be allowed as an option to select as the max allowable guesses input box | only values between 0-10 is available | option to select from 0 to 10 | Pass | Manual Test |
+| Test if the system allows greater than 10 allowable guesses | input negative or numbers greater than 10 in the max allowable guesses input box | only value between 0-10 is available | select from 0 to 10 | Pass | Manual Test |
 | create Puzzle - can have non alphanumberic characters| create player1; Select "Create Puzzle"; enter a phrase with both letters and non alphanumeric characters  | Should be accepted as a valid phrase | Accepted | Pass | Manual Test |
 | create Puzzle - can have numberic characters| create player1; Select "Create Puzzle"; enter a phrase with both letters and numeric characters  | Should be accepted as a valid phrase | Accepted | Pass | Manual Test |
 | create Puzzle - can't have numberic characters only| create player1; Select "Create Puzzle"; enter a phrase with only numeric characters  | Should not be accepted as a valid phrase | Accepted | Fail | Manual Test |
@@ -217,4 +217,29 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 
 
-[076fe412]: https://github.com/sahandesilva/GATECH/issues "GitHub Issues"
+[076fe412]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues "GitHub Issues"
+
+[076fe420]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe421]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe422]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe423]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe424]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe425]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe426]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe427]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe428]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe429]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe42a]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe42b]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+[076fe42c]: https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues/8 "#8"
+
+
+
+
+
+
+
+
+
+
+
