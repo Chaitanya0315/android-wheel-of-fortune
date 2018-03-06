@@ -145,7 +145,7 @@ public class PuzzleRecord extends SugarRecord<PuzzleRecord> {
     }
 
     public boolean isOutOfGuesses() {
-        return remainingGuessCount <= 0;
+        return remainingGuessCount < 0;
     }
 
     public boolean isComplete() {
