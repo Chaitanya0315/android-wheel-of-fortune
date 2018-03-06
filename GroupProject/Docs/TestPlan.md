@@ -62,14 +62,14 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 **Login UseCase**
 
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail | Testing Technology |
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| Test How the application behaves when a User signup with a username which already exist in the database| sign up for the first user with user name "XXX"; sign up for the second user with the same username "XXX" | Error message | Signed up successfully with message "Player Added". Error Message "Sorry, that user already Exists" displayed when signing up for the second time with the same username| Pass | Manual Test |
-|Test if "DoesUserNameExist" method works correctly| create a user with username "hwang404"; test if method "DoesUserNameExist" returns true when passing in "hwang404" | true | true | Pass | Instrumented Unit Test |
-|Test if signup as new user actually updates the database| create a user with username "hwang404"; test if method "getPlayerByUsername" returns null when passing in "hwang404" | not null | not null | Pass | Instrumented Unit Test |
-|Test if login function works correctly end to end| create a user with username "XXX"; login as the one just created | Display UI with correct options for player to choose from | Display UI as required | Pass | Manual Test |
-| Test if the system allows creating a player with missing user input | leave one of the required input box blank | error message and submit is non-clickable | We'll decide if this is required per project spec | --- | --- |
-| Test if the system allows Login as a player with missing user input | leave the required username input box blank | error message and submit is non-clickable | display error message | logged in successfully | failed | Manual Test |
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test How the application behaves when a User signup with a username which already exist in the database| sign up for the first user with user name "XXX"; sign up for the second user with the same username "XXX" | Error message | Signed up successfully with message "Player Added". Error Message "Sorry, that user already Exists" displayed when signing up for the second time with the same username| Pass |
+|Test if "DoesUserNameExist" method works correctly| create a user with username "hwang404"; test if method "DoesUserNameExist" returns true when passing in "hwang404" | true | true | Pass |
+|Test if signup as new user actually updates the database| create a user with username "hwang404"; test if method "getPlayerByUsername" returns null when passing in "hwang404" | not null | not null | Pass |
+|Test if login function works correctly end to end| create a user with username "XXX"; login as the one just created | Display UI with correct options for player to choose from | Display UI as required | Pass |
+| Test if the system allows creating a player with missing user input | leave one of the required input box blank | error message and submit is non-clickable | We'll decide if this is required per project spec | --- |
+| Test if the system allows Login as a player with missing user input | leave the required username input box blank | error message and submit is non-clickable | display error message | logged in successfully | failed |
 
 <br />
 <br />
@@ -77,10 +77,10 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 **Create Puzzle UseCase**
 
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |  Testing Technology  |
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| Test if the system allows creating a puzzle with missing user input | leave puzzle input box blank | error message and submit is non-clickable | error message | pass | Manual Test |
-| Test if the system allows creating a puzzle with negative or greater than 9 allowable guesses | input negative or numbers greater than 9 in the max allowable guesses input box | only value between 0-10 is available | select from 0 to 10 | pass | Manual Test |
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the system allows creating a puzzle with missing user input | leave puzzle input box blank | error message and submit is non-clickable | error message | pass |
+| Test if the system allows creating a puzzle with negative or greater than 9 allowable guesses | input negative or numbers greater than 9 in the max allowable guesses input box | only value between 0-10 is available | select from 0 to 10 | pass |
 
 <br />
 <br />
@@ -88,13 +88,13 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 **Create Tournament UseCase**
 
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |  Testing Technology  |
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | --- | --- | ------ |
-| Test if the system will select a puzzle already played by the user as a direct play| create 2 puzzles; complete one puzzle; select play random puzzle 10 times | the puzzle already played shall not be selected| --- | --- |
-| Test if the system will select a puzzle already played by the user in a tournament| create a tournament with 5 puzzles and complete all of them; create 6th puzzle; select play random puzzle 10 times | the 6th puzzle shall always be selected| --- | --- |
-| Test if the system will select a puzzle created by the User| create 6 puzzles where only one of them by the tester; select create Tournament; repeat the test for few times |Tester/User should not see the Puzzle he/she created in each iteration| --- | --- |
-| Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | --- | --- |
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | error message popped up | pass |
+| Test if the system will select a puzzle already played by the user as a random play| create 2 puzzles; complete one puzzle; select play random puzzle 10 times | the puzzle already played shall not be selected| puzzle already played didn't show up | pass |
+| Test if the system will select a puzzle already played by the user in a tournament| create a tournament with 5 puzzles and complete all of them; create 6th puzzle; select play random puzzle 10 times | the 6th puzzle shall always be selected| the 6th puzzle is always selected | pass |
+| Test if the system will select a puzzle created by the User| create 6 puzzles where only one of them by the tester; select create Tournament; repeat the test for few times |Tester/User should not see the Puzzle he/she created in each iteration| puzzle created by the user is never selected | pass |
+| Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | error message popped up | pass |
 
 <br />
 <br />
@@ -102,14 +102,14 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 
 **Play Puzzle UseCase**
 
-| Purpose | Steps | Expected Results | Actual Results | Pass/Fail | Testing Technology |
-| ------ | ------ | ------ | ------ | ------ | ------ |
-| Test if the guess a consonant function acts correctly | select guess a consonant; make a guess | only consonant are allowed in the guess input; correct guess will increase the prize value by $100 * number of occurrences and reveal correct occurrences; wrong guess will deduct the remaining wrong guesses by 1| all required conditions met | pass | Manual Test |
-| Test if the guess a vowel function acts correctly when the current balance is less than $300| select buy a vowel |A popup window will appear with the error message that the current balance is not enough to buy a vowel| buy a vowel option is greyed out | pass | Manual Test |
-| Test if the guess a vowel function acts correctly when the current balance is greater than $300| select buy a vowel; make a guess | the total prize is deducted by $300 upon selection; correct guess will reveal the correct occurrences; wrong guess will deduct the remaining wrong guesses by 1| behave as required | pass | Manual Test |
-| Test if solve the puzzle function acts correctly| select solve a puzzle; make a guess | all remaining blanks has to be filled; correct guess will increase the prize value by $1000 for each letter not yet revealed; wrong guess will receive $0 for the puzzle; ends the game| total prize is $0 | passed | Manual Test |
-| Test if the exit/continue functions for Puzzles act correctly| start a puzzle; select exit; select continue; select exit; select leave | confirmation window pops up when selecting exit for the first time; continue button available for user and takes user back to the game; return to the main menu when selecting exit again before clicking on the leave button on the confirmation window| as required | pass | Manual Test |
-| Test if an already played Puzzle is displayed to the User to play | Create multiple Puzzles fro the Tester's Player account; select solve Random Puzzle option | Tester should not see any Puzzle as a option to play| only valid puzzles selected | pass | Manual Test |
+| Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
+| ------ | ------ | ------ | ------ | ------ |
+| Test if the guess a consonant function acts correctly | select guess a consonant; make a guess | only consonant are allowed in the guess input; correct guess will increase the prize value by $100 * number of occurrences and reveal correct occurrences; wrong guess will deduct the remaining wrong guesses by 1| all required conditions met | pass |
+| Test if the guess a vowel function acts correctly when the current balance is less than $300| select buy a vowel |A popup window will appear with the error message that the current balance is not enough to buy a vowel| buy a vowel option is greyed out | pass |
+| Test if the guess a vowel function acts correctly when the current balance is greater than $300| select buy a vowel; make a guess | the total prize is deducted by $300 upon selection; correct guess will reveal the correct occurrences; wrong guess will deduct the remaining wrong guesses by 1| behave as required | pass |
+| Test if solve the puzzle function acts correctly| select solve a puzzle; make a guess | all remaining blanks has to be filled; correct guess will increase the prize value by $1000 for each letter not yet revealed; wrong guess will receive $0 for the puzzle; ends the game| total prize is $0 | passed |
+| Test if the exit/continue functions for Puzzles act correctly| start a puzzle; select exit; select continue; select exit; select leave | confirmation window pops up when selecting exit for the first time; continue button available for user and takes user back to the game; return to the main menu when selecting exit again before clicking on the leave button on the confirmation window| as required | pass |
+| Test if an already played Puzzle is displayed to the User to play | Create multiple Puzzles fro the Tester's Player account; select solve Random Puzzle option | Tester should not see any Puzzle as a option to play| only valid puzzles selected | pass |
 
 <br />
 <br />
@@ -121,7 +121,7 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 | Purpose | Steps | Expected Results | Actual Results | Pass/Fail |
 | ------ | ------ | ------ | ------ | ------ |
 | Test if the system allows creating a tournament with missing user input | leave one of the required input box blank | error message and submit is non-clickable | When the name is not entered or the puzzles are not selected for the Tournament an error message: "Sorry the name cannot be empty and puzzles must be selected" is displayed to the user as expected | Passed |
-| Test if the system will select a puzzle already played by the user in a tournament| create player1; create a tournament with 5 puzzles ;create the 6th standalone puzzle; Logout player1;create player2; complete the tournament completed by the player1; select play random puzzle 10 times | the 6th standalone puzzle create by player1 shall always be selected for player1| As expected only the 6th puzzle created by player1 is displayed as the only option for the player2 to play as a random puzzle | Passed |
+| Test if the system will select a puzzle already played by the user in a tournament| create player1; create a tournament with 5 puzzles ;create the 6th standalone puzzle; Logout player1; create player2; complete the tournament completed by the player1; select play random puzzle 10 times | the 6th standalone puzzle create by player1 shall always be selected for player1| As expected only the 6th puzzle created by player1 is displayed as the only option for the player2 to play as a random puzzle | Passed |
 | Test if the system will select a puzzle created by the User| create player1; create 5 puzzles from player1's account; logout player1; create player2; create a puzzle from player2's account; select create Tournament from player2's account; repeat the test for few times |Player2 should only see the Puzzle he/she created in each iteration as an option to add in a Tournament created| As expected puzzle created by player2 was the only displayed to the player2 in each iteration | Passed |
 | Test How the the application behaves when a duplicate name is used for a Tournament| create a tournament with  name "XXX"; create the second tournament with the same name "XXX" | Error message | As expected an error message:"Name already exists!" is displayed to the User| Passed |
 | Test if the Tournament can select more than 5 puzzles| create a player1; create 6 puzzles; create a Tournament and select all 6 puzzles for the tournament with a unique name | Error message | It was allowed which is not the expected case and logged an issue on Github issue tracker| Failed |
