@@ -18,7 +18,7 @@ public class Puzzle extends SugarRecord<Puzzle> {
 
     @Override
     public String toString() {
-        return phrase;
+        return "Puzzle #" + getId() + " (" + getPlayer().getUserName() + ")";
     }
 
     public String getPhrase(){
