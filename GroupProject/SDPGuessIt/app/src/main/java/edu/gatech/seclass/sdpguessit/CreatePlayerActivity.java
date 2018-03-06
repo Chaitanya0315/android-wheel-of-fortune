@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -48,6 +49,31 @@ public class CreatePlayerActivity extends AppCompatActivity {
         String eMail = email.getText().toString();
 
         // TODO: Check validity of fields
+        boolean hadError = false;
+        if(TextUtils.isEmpty(firstName)){
+            hadError = true;
+            firstname.setError("Cannot be empty.");
+        }
+
+        if(TextUtils.isEmpty(lastName)){
+            hadError = true;
+            lastname.setError("Cannot be empty.");
+        }
+
+        if(TextUtils.isEmpty(userName)){
+            hadError = true;
+            username.setError("Cannot be empty.");
+        }
+
+        if(TextUtils.isEmpty(eMail)){
+            hadError = true;
+            email.setError("Cannot be empty.");
+        }
+
+
+        if(hadError){
+            return;
+        }
 
         if (playerManager.doesUsernameExist(userName)) {
             Snackbar.make(v, "Sorry that user already exists", Snackbar.LENGTH_LONG)
