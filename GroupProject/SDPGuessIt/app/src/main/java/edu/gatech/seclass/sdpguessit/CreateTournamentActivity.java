@@ -105,8 +105,8 @@ public class CreateTournamentActivity extends AppCompatActivity {
         String mName = name.getText().toString();
 
         if(!tournamentManager.doesTournamentNameExist(mName)) {
-            if (TextUtils.isEmpty(mName) || selectedPuzzles.isEmpty()) {
-                Snackbar.make(v, "Sorry the name cannot be empty and puzzles must be selected", Snackbar.LENGTH_LONG)
+            if (TextUtils.isEmpty(mName) || selectedPuzzles.isEmpty() || selectedPuzzles.size() >= 6) {
+                Snackbar.make(v, "Sorry the name cannot be empty and you must select 1-5 puzzles", Snackbar.LENGTH_LONG)
                         .setAction("Dismiss", null).show();
             } else {
                 Long id = tournamentManager.createNewTournament(player, mName, selectedPuzzles);
