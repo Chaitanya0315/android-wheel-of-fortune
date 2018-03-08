@@ -66,8 +66,8 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 |Test if "DoesUserNameExist" method works correctly| create a user with username "hwang404"; test if method "DoesUserNameExist" returns true when passing in "hwang404" | true | true | Pass | Instrumented Unit Test |
 |Test if signup as new user actually updates the database| create a user with username "hwang404"; test if method "getPlayerByUsername" returns null when passing in "hwang404" | not null | not null | Pass | Instrumented Unit Test |
 |Test if login function works correctly end to end| create a user with username "XXX"; login as the one just created | Display UI with correct options for player to choose from | Display UI as required | Pass | Manual Test |
-| Test if the system allows creating a player with missing user input - First Name, Last Name and email| leave the First Name/Last Name input text boxs | error message and submit is non-clickable | Accepted | Fail | Manual Test |
-| Test if the system allows creating a player with missing user input - Username | leave the Username input text box unfilled | error message and submit is non-clickable | logged in successfully | Fail | Manual Test |
+| Test if the system allows creating a player with missing user input - First Name, Last Name and email| leave the First Name/Last Name input text boxs | error message and submit is non-clickable | error message and submit is non-clickable  | Pass | Manual Test |
+| Test if the system allows creating a player with missing user input - Username | leave the Username input text box unfilled | error message and submit is non-clickable | error message and submit is non-clickable | Pass | Manual Test |
 | Login - username doesn't exit in the databse | enter an username which doesnt exist in the databse and press Login | error message and submit is non-clickable | Error message "User doesn't exist" displayed | Pass | Manual Test |
 
 <br />
