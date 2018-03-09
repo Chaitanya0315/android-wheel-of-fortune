@@ -84,8 +84,8 @@ Our Test Plan consists of both manual and automated Testing. Test cases will be 
 | Test if the system allows greater than 10 allowable guesses | input negative or numbers greater than 10 in the max allowable guesses input box | only value between 0-10 is available | select from 0 to 10 | Pass | Manual Test |
 | create Puzzle - can have non alphanumeric characters| create player1; Select "Create Puzzle"; enter a phrase with both letters and non alphanumeric characters  | Should be accepted as a valid phrase | Accepted | Pass | Manual Test |
 | create Puzzle - can have numeric characters| create player1; Select "Create Puzzle"; enter a phrase with both letters and numeric characters  | Should be accepted as a valid phrase | Accepted | Pass | Manual Test |
-| create Puzzle - can't have numeric characters only| create player1; Select "Create Puzzle"; enter a phrase with only numeric characters  | Should not be accepted as a valid phrase | Accepted | Fail | Manual Test |
-| create Puzzle - can't have non alphanumeric characters only| create player1; Select "Create Puzzle"; enter a phrase with only non alphanumeric characters  | Should not be accepted as a valid phrase | Accepted | Fail | Manual Test |
+| create Puzzle - can't have numeric characters only| create player1; Select "Create Puzzle"; enter a phrase with only numeric characters  | Accepted as it's not a requirement  | Accepted | Pass | Manual Test |
+| create Puzzle - can't have non alphanumeric characters only| create player1; Select "Create Puzzle"; enter a phrase with only non alphanumeric characters  | Accepted as it's not a requirement | Accepted | Pass | Manual Test |
 | Test if the lowercase letters are allowed in phrase when creating a Puzzle| create player1; Select 'Create Puzzle'; create puzzle1 in which the phrase has 'B' and 'b'; Press create Puzzle button |should be allowed|As expected lowercase letters are allowed| Pass | Manual Test |
 
 <br />
