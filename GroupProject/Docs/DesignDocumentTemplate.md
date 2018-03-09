@@ -43,10 +43,6 @@ This section gives a lower-level look into the system's structure. More diagrams
 
 ![Class Diagram](../Design-Team/design-team.png)
 
-### 3.2 Other Diagrams
-
-None at this time. Will be included later when code sequences are better defined. 
-
 ## 4 User Interface Design
 
 Here are some rough drafts of the GUI for the 'Wheel of Fortune' Team11 application. The following images are by no means final and are subject to change. 

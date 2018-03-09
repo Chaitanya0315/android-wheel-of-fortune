@@ -28,7 +28,7 @@ The following minimum system criteria must be met for the GuessIt application to
 * Access to a machine that has Git 2.10.1 installed 
 
 ## 1.2 Known Issues and Limitations
-Since this is a beta release, we are still in the testing phase of the application's life cycle. At this time there are no known significant issues, but there are a few minor issues tracked through our bug tracking system. To view the current list of bugs and their status, see the [issues section](https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues ) issues section of our Github repository. 
+To see a comprehensive tracking of all completed issues see our [issues page](https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11/issues). Prior to this release the team has fixed all known issues. If any issues are encountered during the use of this application do not hesitate to reach out to our support team. 
 
 ## 1.3 Help and Support
 If any issues in running the GuessIt application are found, please contact Team11 through the following means:
@@ -41,6 +41,7 @@ If any issues in running the GuessIt application are found, please contact Team1
 | HaoHao Wang    | hwang404@gatech.edu    |
 
 ## 2.0 Getting Started
+Full disclosure, this application is ONLY allowed to meant to be run by installing the APL. Anyone who tries to build/run the application through Android Studio will encounter undefined behavior. Please contact our support team with any questions. 
 
 ## 2.1 Git
 To obtain access to the GuessIt application the user must first clone our repository. The repository can be accessed [here](https://github.gatech.edu/gt-omscs-se-2018spring/6300Spring18Team11). If a user needs access to our repository, please contact the support staff listed above. 
